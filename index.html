@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéShop - Loja de Pokémons</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-bolt"></i> PokéShop</h1>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link active">Início</a>
+                <a href="#products" class="nav-link">Pokémons</a>
+                <a href="admin.html" class="nav-link admin-link">Área Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Capture os Melhores Pokémons!</h2>
+                <p>Descubra nossa coleção exclusiva de Pokémons raros e lendários</p>
+                <a href="#products" class="btn btn-primary">Ver Pokémons</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Pokémons</h2>
+            
+            <!-- Category Filters -->
+            <div class="filters">
+                <h3>Categorias</h3>
+                <div class="filter-group">
+                    <input type="radio" id="all" name="category" value="all" checked>
+                    <label for="all" class="filter-btn">Todos</label>
+                    
+                    <input type="radio" id="legendary" name="category" value="legendary">
+                    <label for="legendary" class="filter-btn">Lendários</label>
+                    
+                    <input type="radio" id="location" name="category" value="location">
+                    <label for="location" class="filter-btn">Fundo de Localidade</label>
+                    
+                    <input type="radio" id="shiny" name="category" value="shiny">
+                    <label for="shiny" class="filter-btn">Shiny</label>
+                    
+                    <input type="radio" id="dynamax" name="category" value="dynamax">
+                    <label for="dynamax" class="filter-btn">Dynamax</label>
+                    
+                    <input type="radio" id="gigantamax" name="category" value="gigantamax">
+                    <label for="gigantamax" class="filter-btn">Gigantamax</label>
+                    
+                    <input type="radio" id="event" name="category" value="event">
+                    <label for="event" class="filter-btn">Evento</label>
+                </div>
+            </div>
+
+            <!-- Pokemon Grid -->
+            <div class="pokemon-grid">
+                <!-- Legendary Pokemon -->
+                <div class="pokemon-card legendary" data-category="legendary">
+                    <div class="card-header">
+                        <span class="category-badge legendary-badge">Lendário</span>
+                        <span class="price">R$ 2.500,00</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png" alt="Mewtwo" class="pokemon-image">
+                    <div class="card-content">
+                        <h3>Mewtwo</h3>
+                        <p class="pokemon-type">Tipo: Psíquico</p>
+                        <p class="pokemon-description">Pokémon Genético extremamente raro e poderoso.</p>
+                        <a href="pokemon-detail.html?id=150" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+
+                <div class="pokemon-card legendary" data-category="legendary">
+                    <div class="card-header">
+                        <span class="category-badge legendary-badge">Lendário</span>
+                        <span class="price">R$ 3.000,00</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/144.png" alt="Articuno" class="pokemon-image">
+                    <div class="card-content">
+                        <h3>Articuno</h3>
+                        <p class="pokemon-type">Tipo: Gelo/Voador</p>
+                        <p class="pokemon-description">Ave lendária que controla o gelo.</p>
+                        <a href="pokemon-detail.html?id=144" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+
+                <div class="pokemon-card legendary" data-category="legendary">
+                    <div class="card-header">
+                        <span class="category-badge legendary-badge">Lendário</span>
+                        <span class="price">R$ 3.200,00</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/145.png" alt="Zapdos" class="pokemon-image">
+                    <div class="card-content">
+                        <h3>Zapdos</h3>
+                        <p class="pokemon-type">Tipo: Elétrico/Voador</p>
+                        <p class="pokemon-description">Ave lendária que controla os raios.</p>
+                        <a href="pokemon-detail.html?id=145" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+
+                <!-- Location Background Pokemon -->
+                <div class="pokemon-card location" data-category="location">
+                    <div class="card-header">
+                        <span class="category-badge location-badge">Fundo de Localidade</span>
+                        <span class="price">R$ 800,00</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu" class="pokemon-image">
+                    <div class="card-content">
+                        <h3>Pikachu</h3>
+                        <p class="pokemon-type">Tipo: Elétrico</p>
+                        <p class="pokemon-description">Capturado na Floresta de Viridian.</p>
+                        <a href="pokemon-detail.html?id=25" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+
+                <div class="pokemon-card location" data-category="location">
+                    <div class="card-header">
+                        <span class="category-badge location-badge">Fundo de Localidade</span>
+                        <span class="price">R$ 650,00</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="Bulbasaur" class="pokemon-image">
+                    <div class="card-content">
+                        <h3>Bulbasaur</h3>
+                        <p class="pokemon-type">Tipo: Grama/Venenoso</p>
+                        <p class="pokemon-description">Encontrado no Laboratório do Professor Carvalho.</p>
+                        <a href="pokemon-detail.html?id=1" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+
+                <!-- Shiny Pokemon -->
+                <div class="pokemon-card shiny" data-category="shiny">
+                    <div class="card-header">
+                        <span class="category-badge shiny-badge">Shiny ✨</span>
+                        <span class="price">R$ 1.800,00</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" alt="Charizard Shiny" class="pokemon-image shiny-effect">
+                    <div class="card-content">
+                        <h3>Charizard Shiny</h3>
+                        <p class="pokemon-type">Tipo: Fogo/Voador</p>
+                        <p class="pokemon-description">Versão extremamente rara com coloração especial.</p>
+                        <a href="pokemon-detail.html?id=6" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+
+                <div class="pokemon-card shiny" data-category="shiny">
+                    <div class="card-header">
+                        <span class="category-badge shiny-badge">Shiny ✨</span>
+                        <span class="price">R$ 1.200,00</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png" alt="Gengar Shiny" class="pokemon-image shiny-effect">
+                    <div class="card-content">
+                        <h3>Gengar Shiny</h3>
+                        <p class="pokemon-type">Tipo: Fantasma/Venenoso</p>
+                        <p class="pokemon-description">Pokémon Fantasma com aparência única.</p>
+                        <a href="pokemon-detail.html?id=94" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+
+                <!-- Dynamax Pokemon -->
+                <div class="pokemon-card dynamax" data-category="dynamax">
+                    <div class="card-header">
+                        <span class="category-badge dynamax-badge">Dynamax</span>
+                        <span class="price">R$ 1.500,00</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/448.png" alt="Lucario Dynamax" class="pokemon-image dynamax-effect">
+                    <div class="card-content">
+                        <h3>Lucario Dynamax</h3>
+                        <p class="pokemon-type">Tipo: Lutador/Aço</p>
+                        <p class="pokemon-description">Pokémon com poder Dynamax ativado.</p>
+                        <a href="pokemon-detail.html?id=448" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+
+                <div class="pokemon-card dynamax" data-category="dynamax">
+                    <div class="card-header">
+                        <span class="category-badge dynamax-badge">Dynamax</span>
+                        <span class="price">R$ 1.100,00</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png" alt="Lapras Dynamax" class="pokemon-image dynamax-effect">
+                    <div class="card-content">
+                        <h3>Lapras Dynamax</h3>
+                        <p class="pokemon-type">Tipo: Água/Gelo</p>
+                        <p class="pokemon-description">Pokémon gentil com tamanho aumentado.</p>
+                        <a href="pokemon-detail.html?id=131" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+
+                <!-- Gigantamax Pokemon -->
+                <div class="pokemon-card gigantamax" data-category="gigantamax">
+                    <div class="card-header">
+                        <span class="category-badge gigantamax-badge">Gigantamax</span>
+                        <span class="price">R$ 2.200,00</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu Gigantamax" class="pokemon-image gigantamax-effect">
+                    <div class="card-content">
+                        <h3>Pikachu Gigantamax</h3>
+                        <p class="pokemon-type">Tipo: Elétrico</p>
+                        <p class="pokemon-description">Pikachu com forma Gigantamax única.</p>
+                        <a href="pokemon-detail.html?id=25" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+
+                <div class="pokemon-card gigantamax" data-category="gigantamax">
+                    <div class="card-header">
+                        <span class="category-badge gigantamax-badge">Gigantamax</span>
+                        <span class="price">R$ 2.000,00</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" alt="Charizard Gigantamax" class="pokemon-image gigantamax-effect">
+                    <div class="card-content">
+                        <h3>Charizard Gigantamax</h3>
+                        <p class="pokemon-type">Tipo: Fogo/Voador</p>
+                        <p class="pokemon-description">Charizard com forma Gigantamax especial.</p>
+                        <a href="pokemon-detail.html?id=6" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+
+                <!-- Event Pokemon -->
+                <div class="pokemon-card event" data-category="event">
+                    <div class="card-header">
+                        <span class="category-badge event-badge">Evento</span>
+                        <span class="price">R$ 3.500,00</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png" alt="Mew Evento" class="pokemon-image event-effect">
+                    <div class="card-content">
+                        <h3>Mew do Evento</h3>
+                        <p class="pokemon-type">Tipo: Psíquico</p>
+                        <p class="pokemon-description">Mew exclusivo de evento especial.</p>
+                        <a href="pokemon-detail.html?id=151" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+
+                <div class="pokemon-card event" data-category="event">
+                    <div class="card-header">
+                        <span class="category-badge event-badge">Evento</span>
+                        <span class="price">R$ 2.800,00</span>
+                    </div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/249.png" alt="Lugia Evento" class="pokemon-image event-effect">
+                    <div class="card-content">
+                        <h3>Lugia do Evento</h3>
+                        <p class="pokemon-type">Tipo: Psíquico/Voador</p>
+                        <p class="pokemon-description">Lugia distribuído em evento limitado.</p>
+                        <a href="pokemon-detail.html?id=249" class="btn btn-secondary">Ver Detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PokéShop</h3>
+                    <p>A melhor loja de Pokémons do mundo!</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#products">Pokémons</a></li>
+                        <li><a href="admin.html">Área Admin</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <p>Email: contato@pokeshop.com</p>
+                    <p>Telefone: (11) 99999-9999</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PokéShop. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
