@@ -1,0 +1,261 @@
+import "./index.css";
+import Header from '../../Components/Header/header.js';
+import Footer from '../../Components/Footer/footer.js';
+
+
+function PokemonDetail() {
+    return (
+        <main className="pokemon-detail">
+            <Header />
+            {/* Breadcrumb */}
+            <section className="breadcrumb">
+                <div className="container">
+                    <nav className="breadcrumb-nav">
+                        <a href="/">Início</a>
+                        <span>/</span>
+                        <a href="/#products">Pokemons</a>
+                        <span>/</span>
+                        <span className="current">Detalhes</span>
+                    </nav>
+                </div>
+            </section>
+
+            {/* Pokemon Detail Section */}
+            <section className="pokemon-detail">
+                <div className="container">
+                    <div className="detail-grid">
+                        {/* Pokemon Image Gallery - agora imagem fixa */}
+                        <div className="image-section">
+                            <div className="main-image">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu" id="main-pokemon-image" />
+                                <div className="image-badges">
+                                    <span className="category-badge shiny-badge">Shiny ✨</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Pokemon Information */}
+                        <div className="info-section">
+                            <div className="pokemon-header">
+                                <h1 className="pokemon-name">Pikachu</h1>
+                                <div className="pokemon-number">#025</div>
+                            </div>
+
+                            <div className="price-section">
+                                <span className="current-price">R$ 1.800,00</span>
+                                <span className="original-price">R$ 2.200,00</span>
+                                <span className="discount">18% OFF</span>
+                            </div>
+
+                            <div className="pokemon-types">
+                                <span className="type electric">Elétrico</span>
+                            </div>
+
+                            <div className="pokemon-description">
+                                <h3>Descrição</h3>
+                                <p>Este Pikachu especial possui uma coloração única que o torna extremamente raro. Sua pelagem dourada brilha sob a luz, e suas bochechas vermelhas emitem faíscas mais intensas que as de um Pikachu comum. Capturado durante um evento especial na Floresta de Viridian, este Pokemon é uma verdadeira joia para qualquer colecionador.</p>
+                            </div>
+
+                            <div className="pokemon-stats">
+                                <h3>Estatísticas</h3>
+                                <div className="stats-grid">
+                                    <div className="stat">
+                                        <span className="stat-label">HP</span>
+                                        <div className="stat-bar">
+                                            <div className="stat-fill" style={{ width: '70%' }}></div>
+                                        </div>
+                                        <span className="stat-value">35</span>
+                                    </div>
+                                    <div className="stat">
+                                        <span className="stat-label">Ataque</span>
+                                        <div className="stat-bar">
+                                            <div className="stat-fill" style={{ width: '80%' }}></div>
+                                        </div>
+                                        <span className="stat-value">55</span>
+                                    </div>
+                                    <div className="stat">
+                                        <span className="stat-label">Defesa</span>
+                                        <div className="stat-bar">
+                                            <div className="stat-fill" style={{ width: '60%' }}></div>
+                                        </div>
+                                        <span className="stat-value">40</span>
+                                    </div>
+                                    <div className="stat">
+                                        <span className="stat-label">Velocidade</span>
+                                        <div className="stat-bar">
+                                            <div className="stat-fill" style={{ width: '90%' }}></div>
+                                        </div>
+                                        <span className="stat-value">90</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="pokemon-moves">
+                                <h3>Movimentos Especiais</h3>
+                                <div className="moves-grid">
+                                    <span className="move">Thunderbolt</span>
+                                    <span className="move">Quick Attack</span>
+                                    <span className="move">Iron Tail</span>
+                                    <span className="move">Electro Ball</span>
+                                </div>
+                            </div>
+
+                            <div className="purchase-section">
+                                <div className="quantity-selector">
+                                    <label htmlFor="quantity">Quantidade:</label>
+                                    <select id="quantity">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                                <button className="btn btn-primary btn-large">
+                                    <i className="fas fa-shopping-cart"></i>
+                                    Adicionar ao Carrinho
+                                </button>
+                                <button className="btn btn-secondary btn-large">
+                                    <i className="fas fa-bolt"></i>
+                                    Comprar Agora
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Additional Info Tabs */}
+                    <div className="additional-info">
+                        <div className="tabs">
+                            {/* Tabs logic can be implemented with React state if needed */}
+                            <input type="radio" id="tab1" name="tabs" defaultChecked />
+                            <input type="radio" id="tab2" name="tabs" />
+                            <input type="radio" id="tab3" name="tabs" />
+
+                            <div className="tab-labels">
+                                <label htmlFor="tab1" className="tab-label">Informações Detalhadas</label>
+                                <label htmlFor="tab2" className="tab-label">Histórico</label>
+                                <label htmlFor="tab3" className="tab-label">Avaliações</label>
+                            </div>
+
+                            <div className="tab-content">
+                                <div className="tab-panel">
+                                    <h3>Informações Detalhadas</h3>
+                                    <div className="detail-table">
+                                        <div className="detail-row">
+                                            <span className="detail-label">Espécie:</span>
+                                            <span className="detail-value">Pokemon Rato</span>
+                                        </div>
+                                        <div className="detail-row">
+                                            <span className="detail-label">Altura:</span>
+                                            <span className="detail-value">0.4 m</span>
+                                        </div>
+                                        <div className="detail-row">
+                                            <span className="detail-label">Peso:</span>
+                                            <span className="detail-value">6.0 kg</span>
+                                        </div>
+                                        <div className="detail-row">
+                                            <span className="detail-label">Categoria:</span>
+                                            <span className="detail-value">Shiny</span>
+                                        </div>
+                                        <div className="detail-row">
+                                            <span className="detail-label">Habilidade:</span>
+                                            <span className="detail-value">Static</span>
+                                        </div>
+                                        <div className="detail-row">
+                                            <span className="detail-label">Raridade:</span>
+                                            <span className="detail-value">★★★★☆</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="tab-panel">
+                                    <h3>Histórico do Pokemon</h3>
+                                    <div className="history-timeline">
+                                        <div className="timeline-item">
+                                            <div className="timeline-date">2025-01-15</div>
+                                            <div className="timeline-content">
+                                                <h4>Capturado</h4>
+                                                <p>Encontrado na Floresta de Viridian durante uma tempestade elétrica.</p>
+                                            </div>
+                                        </div>
+                                        <div className="timeline-item">
+                                            <div className="timeline-date">2025-02-10</div>
+                                            <div className="timeline-content">
+                                                <h4>Treinamento</h4>
+                                                <p>Participou de treinamento intensivo no Centro Pokemon de Cerulean City.</p>
+                                            </div>
+                                        </div>
+                                        <div className="timeline-item">
+                                            <div className="timeline-date">2025-06-30</div>
+                                            <div className="timeline-content">
+                                                <h4>Disponível para Venda</h4>
+                                                <p>Adicionado ao catálogo da PokeShop após certificação completa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="tab-panel">
+                                    <h3>Avaliações dos Clientes</h3>
+                                    <div className="reviews">
+                                        <div className="review">
+                                            <div className="review-header">
+                                                <div className="reviewer-name">Ash K.</div>
+                                                <div className="review-rating">★★★★★</div>
+                                            </div>
+                                            <p>"Incrível! Este Pikachu é exatamente como descrito. A coloração dourada é deslumbrante e ele é muito carinhoso. Recomendo totalmente!"</p>
+                                        </div>
+                                        <div className="review">
+                                            <div className="review-header">
+                                                <div className="reviewer-name">Misty W.</div>
+                                                <div className="review-rating">★★★★★</div>
+                                            </div>
+                                            <p>"Comprei para minha coleção e não poderia estar mais satisfeita. A entrega foi rápida e o Pokemon chegou em perfeitas condições."</p>
+                                        </div>
+                                        <div className="review">
+                                            <div className="review-header">
+                                                <div className="reviewer-name">Brock H.</div>
+                                                <div className="review-rating">★★★★☆</div>
+                                            </div>
+                                            <p>"Excelente Pokemon, muito bem cuidado. Único ponto é que gostaria que viesse com mais informações sobre cuidados especiais."</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Related Pokemon */}
+            <section className="related-pokemon">
+                <div className="container">
+                    <h2>Pokemons Relacionados</h2>
+                    <div className="related-grid">
+                        <div className="pokemon-card">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png" alt="Raichu" />
+                            <h3>Raichu Shiny</h3>
+                            <p className="price">R$ 2.100,00</p>
+                            <a href="/pokemon-detail?id=26" className="btn btn-secondary">Ver Detalhes</a>
+                        </div>
+                        <div className="pokemon-card">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/172.png" alt="Pichu" />
+                            <h3>Pichu Shiny</h3>
+                            <p className="price">R$ 1.200,00</p>
+                            <a href="/pokemon-detail?id=172" className="btn btn-secondary">Ver Detalhes</a>
+                        </div>
+                        <div className="pokemon-card">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png" alt="Eevee" />
+                            <h3>Eevee Shiny</h3>
+                            <p className="price">R$ 1.500,00</p>
+                            <a href="/pokemon-detail?id=133" className="btn btn-secondary">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Footer */}
+            <Footer />
+        </main>
+    );
+}
+
+export default PokemonDetail;

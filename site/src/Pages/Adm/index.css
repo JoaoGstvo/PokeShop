@@ -1,3 +1,6 @@
+
+.admin-page {
+
 /* Admin Specific Styles */
 .admin-body {
     background: #f1f5f9;
@@ -767,4 +770,5 @@
     .order-actions {
         flex-direction: column;
     }
+}
 }
