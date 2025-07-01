@@ -45,7 +45,7 @@ function Login() {
                                         <span className="checkmark"></span>
                                         Lembrar de mim
                                     </label>
-                                    <a href="#" className="forgot-link">Esqueceu a senha?</a>
+                                    <a href="/" className="forgot-link">Esqueceu a senha?</a>
                                 </div>
                                 
                                 <button id="cor-btn-login" type="submit" className="btn btn-primary btn-large">
