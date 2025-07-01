@@ -23,6 +23,17 @@
     flex: 1 1 200px;
 }
 
+#footer-logo {
+    padding-right: 4rem;
+}
+
+#admin-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
 .footer-section h3, .footer-section h4 {
     margin-bottom: 0.5rem;
     color: #fbbf24;

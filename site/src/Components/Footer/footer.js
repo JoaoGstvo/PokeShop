@@ -6,7 +6,7 @@ function Footer() {
         <footer className="footer">
             <div className="container">
                 <div className="footer-content">
-                    <div className="footer-section">
+                    <div className="footer-section" id="footer-logo">
                         <h3>PokéShop</h3>
                         <p>A melhor loja de Pokémons do mundo!</p>
                     </div>
@@ -15,13 +15,16 @@ function Footer() {
                         <ul>
                             <li><a href="/">Início</a></li>
                             <li><a href="/#products">Pokémons</a></li>
-                            <li><a href="/admin">Área Admin</a></li>
                         </ul>
                     </div>
                     <div className="footer-section">
                         <h4>Contato</h4>
                         <p>Email: contato@pokéshop.com</p>
                         <p>Telefone: (11) 99999-9999</p>
+                    </div>
+
+                    <div className="footer-section" id="admin-btn">
+                        <a href="/admin" className="nav-link admin-link">Área Admin</a>
                     </div>
                 </div>
                 <div className="footer-bottom">

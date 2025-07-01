@@ -11,7 +11,8 @@ function Header() {
                 <nav className="nav-header">
                     <a href="/" className="nav-link">Início</a>
                     <a href="/#products" className="nav-link">Pokémons</a>
-                    <a href="/admin" className="nav-link admin-link">Área Admin</a>
+                    <a href="/login" className="nav-link auth-link">Login</a>
+                    <a href="/cadastro" className="nav-link auth-link cadastro-link">Cadastro</a>
                 </nav>
             </div>
         </header>
