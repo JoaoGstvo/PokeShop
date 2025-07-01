@@ -28,7 +28,7 @@ function AdminPanel() {
                         <h1><i className="fas fa-shield-alt"></i> PokeShop Admin</h1>
                     </div>
                     <nav className="admin-nav">
-                        <a href="index.html" className="nav-link">
+                        <a href="/" className="nav-link">
                             <i className="fas fa-arrow-left"></i>
                             Voltar ao Site
                         </a>

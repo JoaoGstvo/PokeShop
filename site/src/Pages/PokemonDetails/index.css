@@ -11,6 +11,7 @@
     align-items: center;
     gap: 0.5rem;
     color: #6b7280;
+    padding-left: 1.8em;
 }
 
 .breadcrumb-nav a {
@@ -30,8 +31,15 @@
 
 /* Pokemon Detail Layout */
 .pokemon-detail {
-    padding: 3rem 0;
-    background: white;
+    padding: 2rem 0rem 0rem 0rem; /*Espaço no topo e laterais, zero embaixo
+    background: transparent; /* Remove fundo branco extra */
+    min-height: 100vh; /* Garante que a página ocupe toda a altura da tela */
+    display: flex;
+    flex-direction: column;
+}
+
+.info-section {
+    padding-right: 2rem;
 }
 
 .detail-grid {
@@ -481,6 +489,7 @@
     color: #059669;
     margin-bottom: 1rem;
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

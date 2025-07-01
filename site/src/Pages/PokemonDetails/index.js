@@ -9,7 +9,7 @@ function PokemonDetail() {
             <Header />
             {/* Breadcrumb */}
             <section className="breadcrumb">
-                <div className="container">
+                <div className="container-nav-detail">
                     <nav className="breadcrumb-nav">
                         <a href="/">Início</a>
                         <span>/</span>
@@ -234,19 +234,19 @@ function PokemonDetail() {
                             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png" alt="Raichu" />
                             <h3>Raichu Shiny</h3>
                             <p className="price">R$ 2.100,00</p>
-                            <a href="/pokemon-detail?id=26" className="btn btn-secondary">Ver Detalhes</a>
+                            <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
                         </div>
                         <div className="pokemon-card">
                             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/172.png" alt="Pichu" />
                             <h3>Pichu Shiny</h3>
                             <p className="price">R$ 1.200,00</p>
-                            <a href="/pokemon-detail?id=172" className="btn btn-secondary">Ver Detalhes</a>
+                            <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
                         </div>
                         <div className="pokemon-card">
                             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png" alt="Eevee" />
                             <h3>Eevee Shiny</h3>
                             <p className="price">R$ 1.500,00</p>
-                            <a href="/pokemon-detail?id=133" className="btn btn-secondary">Ver Detalhes</a>
+                            <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
                         </div>
                     </div>
                 </div>

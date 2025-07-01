@@ -30,6 +30,7 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+
 }
 
 .nav-link {
@@ -39,7 +40,6 @@
     padding: 0.5rem 1rem;
     border-radius: 8px;
     transition: all 0.3s ease;
-    
 }
 
 .nav-link:hover,

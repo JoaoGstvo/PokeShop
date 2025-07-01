@@ -50,9 +50,7 @@
 
     .nav {
         display: flex;
-        align-items: center;
         gap: 2rem;
-        margin-right: 0;
     }
 
     .nav-link {
@@ -77,16 +75,6 @@
 
     .admin-link:hover {
         background: #dc2626 !important;
-    }
-
-    @media (min-width: 900px) {
-        .header .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        .nav {
-            margin-right: 32px;
-        }
     }
 
     /* Hero Section */
@@ -170,9 +158,8 @@
     .filter-group {
         display: flex;
         flex-wrap: wrap;
-        gap: 16px;
         justify-content: center;
-        margin-bottom: 32px;
+        gap: 1rem;
     }
 
     .filter-group input[type="radio"] {
@@ -180,21 +167,14 @@
     }
 
     .filter-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 140px;
-        height: 48px;
-        padding: 0 24px;
-        border-radius: 24px;
+        padding: 10px 20px;
         background: #f3f4f6;
-        color: #374151;
-        font-size: 1.1rem;
-        font-weight: 500;
-        border: none;
+        border: 2px solid #e5e7eb;
+        border-radius: 25px;
         cursor: pointer;
-        transition: background 0.2s, color 0.2s;
-        box-sizing: border-box;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        color: #374151;
     }
 
     .filter-btn:hover {
@@ -487,7 +467,7 @@
 
     @media (max-width: 480px) {
         .container {
-            padding: 0 16px;
+            padding: 0 10px;
         }
 
         .hero {
