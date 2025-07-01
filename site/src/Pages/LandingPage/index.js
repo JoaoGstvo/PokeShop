@@ -10,9 +10,9 @@ function LandingPage() {
             <section id="home" className="hero">
                 <div className="container">
                     <div className="hero-content">
-                        <h2>Capture os Melhores Pokemons!</h2>
-                        <p>Descubra nossa coleção exclusiva de Pokemons raros e lendários</p>
-                        <a href="#products" className="btn btn-primary">Ver Pokemons</a>
+                        <h2>Capture os Melhores Pokémons!</h2>
+                        <p>Descubra nossa coleção exclusiva de Pokémons raros e lendários</p>
+                        <a href="#products" className="btn btn-primary">Ver Pokémons</a>
                     </div>
                 </div>
             </section>
@@ -20,7 +20,7 @@ function LandingPage() {
             {/* <!-- Filters Section --> */}
             <section id="products" className="products-section">
                 <div className="container">
-                    <h2 className="section-title">Nossos Pokemons</h2>
+                    <h2 className="section-title">Nossos Pokémons</h2>
                     
                     {/* <!-- Category Filters --> */}
                     <div className="filters">

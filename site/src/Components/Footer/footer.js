@@ -7,25 +7,25 @@ function Footer() {
             <div className="container">
                 <div className="footer-content">
                     <div className="footer-section">
-                        <h3>PokeShop</h3>
-                        <p>A melhor loja de Pokemons do mundo!</p>
+                        <h3>PokéShop</h3>
+                        <p>A melhor loja de Pokémons do mundo!</p>
                     </div>
                     <div className="footer-section">
                         <h4>Links Úteis</h4>
                         <ul>
                             <li><a href="/">Início</a></li>
-                            <li><a href="/#products">Pokemons</a></li>
+                            <li><a href="/#products">Pokémons</a></li>
                             <li><a href="/admin">Área Admin</a></li>
                         </ul>
                     </div>
                     <div className="footer-section">
                         <h4>Contato</h4>
-                        <p>Email: contato@pokeshop.com</p>
+                        <p>Email: contato@pokéshop.com</p>
                         <p>Telefone: (11) 99999-9999</p>
                     </div>
                 </div>
                 <div className="footer-bottom">
-                    <p>&copy; 2025 PokeShop. Todos os direitos reservados.</p>
+                    <p>&copy; 2025 PokéShop. Todos os direitos reservados.</p>
                 </div>
             </div>
         </footer>
