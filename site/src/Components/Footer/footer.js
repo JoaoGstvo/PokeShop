@@ -24,7 +24,7 @@ function Footer() {
                     </div>
 
                     <div className="footer-section" id="admin-btn">
-                        <a href="/admin" className="nav-link admin-link">Área Admin</a>
+                        <a href="/adminlogin" className="nav-link admin-link">Área Admin</a>
                     </div>
                 </div>
                 <div className="footer-bottom">

@@ -8,6 +8,7 @@ import PokemonDetail from './Pages/PokemonDetails/index.js';
 import AdminPanel from './Pages/Adm/index.js';
 import Login from './Pages/Login/index.js';
 import Cadastro from './Pages/Cadastro/index.js';
+import LoginADM from './Pages/Adm/Login/login.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +20,8 @@ root.render(
         <Route path="/admin" element={<AdminPanel />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/adminlogin" element={<LoginADM />} />
+        {/* Add more routes as needed */}
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

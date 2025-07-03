@@ -190,7 +190,6 @@ function PokemonDetail() {
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
