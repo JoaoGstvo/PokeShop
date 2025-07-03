@@ -131,8 +131,6 @@ function PokemonDetail() {
 
                             <div className="tab-labels">
                                 <label htmlFor="tab1" className="tab-label">Informações Detalhadas</label>
-                                <label htmlFor="tab2" className="tab-label">Histórico</label>
-                                <label htmlFor="tab3" className="tab-label">Avaliações</label>
                             </div>
 
                             <div className="tab-content">
@@ -193,60 +191,7 @@ function PokemonDetail() {
                                     </div>
                                 </div>
 
-                                <div className="tab-panel">
-                                    <h3>Avaliações dos Clientes</h3>
-                                    <div className="reviews">
-                                        <div className="review">
-                                            <div className="review-header">
-                                                <div className="reviewer-name">Ash K.</div>
-                                                <div className="review-rating">★★★★★</div>
-                                            </div>
-                                            <p>"Incrível! Este Pikachu é exatamente como descrito. A coloração dourada é deslumbrante e ele é muito carinhoso. Recomendo totalmente!"</p>
-                                        </div>
-                                        <div className="review">
-                                            <div className="review-header">
-                                                <div className="reviewer-name">Misty W.</div>
-                                                <div className="review-rating">★★★★★</div>
-                                            </div>
-                                            <p>"Comprei para minha coleção e não poderia estar mais satisfeita. A entrega foi rápida e o Pokemon chegou em perfeitas condições."</p>
-                                        </div>
-                                        <div className="review">
-                                            <div className="review-header">
-                                                <div className="reviewer-name">Brock H.</div>
-                                                <div className="review-rating">★★★★☆</div>
-                                            </div>
-                                            <p>"Excelente Pokemon, muito bem cuidado. Único ponto é que gostaria que viesse com mais informações sobre cuidados especiais."</p>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Related Pokemon */}
-            <section className="related-pokemon">
-                <div className="container">
-                    <h2>Pokemons Relacionados</h2>
-                    <div className="related-grid">
-                        <div className="pokemon-card">
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png" alt="Raichu" />
-                            <h3>Raichu Shiny</h3>
-                            <p className="price">R$ 2.100,00</p>
-                            <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
-                        </div>
-                        <div className="pokemon-card">
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/172.png" alt="Pichu" />
-                            <h3>Pichu Shiny</h3>
-                            <p className="price">R$ 1.200,00</p>
-                            <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
-                        </div>
-                        <div className="pokemon-card">
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png" alt="Eevee" />
-                            <h3>Eevee Shiny</h3>
-                            <p className="price">R$ 1.500,00</p>
-                            <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
                         </div>
                     </div>
                 </div>
