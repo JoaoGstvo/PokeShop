@@ -1,4 +1,3 @@
-
 import "./index.css";
 import Header from '../../Components/Header/header.js';
 import Footer from '../../Components/Footer/footer.js';
@@ -11,7 +10,7 @@ function Carrinho() {
             name: "Mewtwo",
             type: "Psíquico",
             category: "Lendário",
-            price: 2500.00,
+            price: 2800.00,
             image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
             quantity: 1
         },
@@ -26,14 +25,8 @@ function Carrinho() {
         }
     ];
 
-    const calculateSubtotal = () => {
-        return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
-    };
-
     const calculateTotal = () => {
-        const subtotal = calculateSubtotal();
-        const shipping = 50.00;
-        return subtotal + shipping;
+        return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
     };
 
     return (
@@ -86,7 +79,7 @@ function Carrinho() {
                                             </div>
                                             <div className="item-actions">
                                                 <button className="btn-remove">
-                                                    <i className="fas fa-trash"></i>
+                                                    <i className="fas fa-trash">R</i>
                                                 </button>
                                             </div>
                                         </div>
@@ -99,14 +92,12 @@ function Carrinho() {
                             <div className="cart-summary">
                                 <h2>Resumo do Pedido</h2>
                                 <div className="summary-details">
-                                    <div className="summary-line">
-                                        <span>Subtotal:</span>
-                                        <span>R$ {calculateSubtotal().toFixed(2)}</span>
-                                    </div>
-                                    <div className="summary-line">
-                                        <span>Frete:</span>
-                                        <span>R$ 50,00</span>
-                                    </div>
+                                    {cartItems.map(item => (
+                                        <div className="summary-line" key={item.id}>
+                                            <span>{item.name}</span>
+                                            <span>x{item.quantity}</span>
+                                        </div>
+                                    ))}
                                     <div className="summary-line total">
                                         <span>Total:</span>
                                         <span>R$ {calculateTotal().toFixed(2)}</span>
@@ -116,14 +107,6 @@ function Carrinho() {
                                 <div className="cart-actions">
                                     <a href="/" className="btn btn-secondary">Continuar Comprando</a>
                                     <a href="/pagamento" className="btn btn-primary">Finalizar Compra</a>
-                                </div>
-
-                                <div className="promo-code">
-                                    <h3>Cupom de Desconto</h3>
-                                    <div className="promo-input">
-                                        <input type="text" placeholder="Digite seu cupom" />
-                                        <button className="btn btn-secondary">Aplicar</button>
-                                    </div>
                                 </div>
                             </div>
                         )}

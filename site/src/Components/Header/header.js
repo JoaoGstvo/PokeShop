@@ -13,7 +13,7 @@ function Header() {
                     <a href="/#products" className="nav-link">Pokémons</a>
                     <a href="/carrinho" className="nav-link cart-link">
                         <i className="fas fa-shopping-cart"></i> Carrinho
-                        <span className="cart-count">0</span>
+                        <span className="cart-count">2</span>
                     </a>
                     <a href="/login" className="nav-link auth-link">Login</a>
                     <a href="/cadastro" className="nav-link auth-link cadastro-link">Cadastro</a>

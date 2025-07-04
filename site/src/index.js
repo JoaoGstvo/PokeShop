@@ -9,6 +9,8 @@ import AdminPanel from './Pages/Adm/index.js';
 import Login from './Pages/Login/index.js';
 import Cadastro from './Pages/Cadastro/index.js';
 import LoginADM from './Pages/Adm/Login/login.js';
+import Carrinho from './Pages/Carrinho/index.js';
+import Pagamento from './Pages/Pagamento/index.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +23,8 @@ root.render(
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/adminlogin" element={<LoginADM />} />
+        <Route path="/carrinho" element={<Carrinho />} />
+        <Route path="/pagamento" element={<Pagamento />} />
         {/* Add more routes as needed */}
       </Routes>
     </BrowserRouter>
