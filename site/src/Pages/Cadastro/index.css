@@ -162,6 +162,12 @@
     grid-column: 2 / 3;
 }
 
+.auth-card .btn-primary {
+    background: linear-gradient(135deg, #09e49b 0%, #059669 100%) !important;
+    color: white !important;
+    border: none !important;
+}
+
 @media (max-width: 900px) {
     .auth-container-login {
         grid-template-columns: 1fr;
