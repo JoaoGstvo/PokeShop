@@ -1,3 +1,4 @@
+
 import "./index.css";
 import Header from '../../Components/Header/header.js';
 import Footer from '../../Components/Footer/footer.js';
@@ -79,7 +80,7 @@ function Carrinho() {
                                             </div>
                                             <div className="item-actions">
                                                 <button className="btn-remove">
-                                                    <i className="fas fa-trash">R</i>
+                                                    <i className="fas fa-trash"></i>
                                                 </button>
                                             </div>
                                         </div>
@@ -92,12 +93,10 @@ function Carrinho() {
                             <div className="cart-summary">
                                 <h2>Resumo do Pedido</h2>
                                 <div className="summary-details">
-                                    {cartItems.map(item => (
-                                        <div className="summary-line" key={item.id}>
-                                            <span>{item.name}</span>
-                                            <span>x{item.quantity}</span>
-                                        </div>
-                                    ))}
+                                    <div className="summary-line">
+                                        <span>Subtotal:</span>
+                                        <span>R$ {calculateTotal().toFixed(2)}</span>
+                                    </div>
                                     <div className="summary-line total">
                                         <span>Total:</span>
                                         <span>R$ {calculateTotal().toFixed(2)}</span>

@@ -62,7 +62,7 @@ function LandingPage() {
                                 <h3>Mewtwo</h3>
                                 <p className="pokemon-type">Tipo: Psíquico</p>
                                 <p className="pokemon-description">Pokemon Genético extremamente raro e poderoso.</p>
-                                <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
+                                <a href="/detalhes-pokemon" className="btn btn-secondary">Ver Detalhes</a>
                             </div>
                         </div>
 
@@ -76,7 +76,7 @@ function LandingPage() {
                                 <h3>Articuno</h3>
                                 <p className="pokemon-type">Tipo: Gelo/Voador</p>
                                 <p className="pokemon-description">Ave lendária que controla o gelo.</p>
-                                <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
+                                <a href="/detalhes-pokemon" className="btn btn-secondary">Ver Detalhes</a>
                             </div>
                         </div>
 
@@ -90,7 +90,7 @@ function LandingPage() {
                                 <h3>Zapdos</h3>
                                 <p className="pokemon-type">Tipo: Elétrico/Voador</p>
                                 <p className="pokemon-description">Ave lendária que controla os raios.</p>
-                                <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
+                                <a href="/detalhes-pokemon" className="btn btn-secondary">Ver Detalhes</a>
                             </div>
                         </div>
 
@@ -105,7 +105,7 @@ function LandingPage() {
                                 <h3>Pikachu</h3>
                                 <p className="pokemon-type">Tipo: Elétrico</p>
                                 <p className="pokemon-description">Capturado na Floresta de Viridian.</p>
-                                <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
+                                <a href="/detalhes-pokemon" className="btn btn-secondary">Ver Detalhes</a>
                             </div>
                         </div>
 
@@ -119,7 +119,7 @@ function LandingPage() {
                                 <h3>Bulbasaur</h3>
                                 <p className="pokemon-type">Tipo: Grama/Venenoso</p>
                                 <p className="pokemon-description">Encontrado no Laboratório do Professor Carvalho.</p>
-                                <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
+                                <a href="/detalhes-pokemon" className="btn btn-secondary">Ver Detalhes</a>
                             </div>
                         </div>
 
@@ -134,7 +134,7 @@ function LandingPage() {
                                 <h3>Charizard Shiny</h3>
                                 <p className="pokemon-type">Tipo: Fogo/Voador</p>
                                 <p className="pokemon-description">Versão extremamente rara com coloração especial.</p>
-                                <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
+                                <a href="/detalhes-pokemon" className="btn btn-secondary">Ver Detalhes</a>
                             </div>
                         </div>
 
@@ -148,7 +148,7 @@ function LandingPage() {
                                 <h3>Gengar Shiny</h3>
                                 <p className="pokemon-type">Tipo: Fantasma/Venenoso</p>
                                 <p className="pokemon-description">Pokemon Fantasma com aparência única.</p>
-                                <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
+                                <a href="/detalhes-pokemon" className="btn btn-secondary">Ver Detalhes</a>
                             </div>
                         </div>
 
@@ -163,7 +163,7 @@ function LandingPage() {
                                 <h3>Lucario Dynamax</h3>
                                 <p className="pokemon-type">Tipo: Lutador/Aço</p>
                                 <p className="pokemon-description">Pokemon com poder Dynamax ativado.</p>
-                                <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
+                                <a href="/detalhes-pokemon" className="btn btn-secondary">Ver Detalhes</a>
                             </div>
                         </div>
 
@@ -177,7 +177,7 @@ function LandingPage() {
                                 <h3>Lapras Dynamax</h3>
                                 <p className="pokemon-type">Tipo: Água/Gelo</p>
                                 <p className="pokemon-description">Pokemon gentil com tamanho aumentado.</p>
-                                <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
+                                <a href="/detalhes-pokemon" className="btn btn-secondary">Ver Detalhes</a>
                             </div>
                         </div>
 
@@ -192,7 +192,7 @@ function LandingPage() {
                                 <h3>Pikachu Gigantamax</h3>
                                 <p className="pokemon-type">Tipo: Elétrico</p>
                                 <p className="pokemon-description">Pikachu com forma Gigantamax única.</p>
-                                <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
+                                <a href="/detalhes-pokemon" className="btn btn-secondary">Ver Detalhes</a>
                             </div>
                         </div>
 
@@ -206,7 +206,7 @@ function LandingPage() {
                                 <h3>Charizard Gigantamax</h3>
                                 <p className="pokemon-type">Tipo: Fogo/Voador</p>
                                 <p className="pokemon-description">Charizard com forma Gigantamax especial.</p>
-                                <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
+                                <a href="/detalhes-pokemon" className="btn btn-secondary">Ver Detalhes</a>
                             </div>
                         </div>
 
@@ -221,7 +221,7 @@ function LandingPage() {
                                 <h3>Mew do Evento</h3>
                                 <p className="pokemon-type">Tipo: Psíquico</p>
                                 <p className="pokemon-description">Mew exclusivo de evento especial.</p>
-                                <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
+                                <a href="/detalhes-pokemon" className="btn btn-secondary">Ver Detalhes</a>
                             </div>
                         </div>
 
@@ -235,7 +235,7 @@ function LandingPage() {
                                 <h3>Lugia do Evento</h3>
                                 <p className="pokemon-type">Tipo: Psíquico/Voador</p>
                                 <p className="pokemon-description">Lugia distribuído em evento limitado.</p>
-                                <a href="/pokemonDetail" className="btn btn-secondary">Ver Detalhes</a>
+                                <a href="/detalhes-pokemon" className="btn btn-secondary">Ver Detalhes</a>
                             </div>
                         </div>
                     </div>

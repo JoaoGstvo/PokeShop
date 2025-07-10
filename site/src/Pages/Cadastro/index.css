@@ -1,9 +1,16 @@
-
 .cadastro-page {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
     background: linear-gradient(135deg, #09e49b 0%, #059669 100%);
+    min-height: 100vh;
+}
+
+.login-page {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
 }
 
@@ -14,13 +21,14 @@
     align-items: center;
 }
 
-.auth-container {
+.auth-container-login {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
+    padding-left: 12rem;
 }
 
 .auth-card {
@@ -47,102 +55,12 @@
     gap: 0.5rem;
 }
 
-.auth-header i {
-    color: #fbbf24;
-}
-
-.auth-header p {
-    color: #6b7280;
-    font-size: 1rem;
-}
-
-.auth-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    color: #374151;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.form-input {
-    padding: 0.875rem 1rem;
-    border: 2px solid #e5e7eb;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background: white;
-}
-
-.form-input:focus {
-    outline: none;
-    border-color: #059669;
-    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
-}
-
-.form-options {
-    margin: 0.5rem 0;
-}
-
-.checkbox-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    cursor: pointer;
-    font-size: 0.9rem;
-    color: #6b7280;
-    line-height: 1.4;
-}
-
-.checkbox-container input {
-    width: 16px;
-    height: 16px;
-    margin-top: 2px;
-    flex-shrink: 0;
-}
-
-.terms-link {
-    color: #059669;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.terms-link:hover {
-    color: #047857;
-}
-
-.btn {
-    padding: 0.875rem 1.5rem;
-    border: none;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    font-size: 1rem;
+#titulo-cor-cadastro {
+    color: #059669; /* verde do cadastro */
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #059669, #047857);
+    background: linear-gradient(135deg, #09e49b 0%, #059669 100%);
     color: white;
 }
 
@@ -230,34 +148,40 @@
     50% { transform: translateY(-10px); }
 }
 
-@media (max-width: 768px) {
-    .auth-container {
+.auth-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+}
+
+.form-group-full {
+    grid-column: 1 / 3;
+}
+
+.form-group-empty {
+    grid-column: 2 / 3;
+}
+
+@media (max-width: 900px) {
+    .auth-container-login {
         grid-template-columns: 1fr;
         gap: 2rem;
         padding: 0 1rem;
     }
-    
     .auth-card {
         padding: 2rem;
         order: 1;
     }
-    
     .auth-decoration {
         order: 2;
     }
-    
-    .form-row {
+}
+
+@media (max-width: 700px) {
+    .auth-form-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
     }
-    
-    .pokemon-silhouette {
-        width: 200px;
-        height: 200px;
-    }
-    
-    .pokemon-silhouette img {
-        width: 150px;
-        height: 150px;
+    .form-group-full, .form-group-empty {
+        grid-column: 1 / 2;
     }
 }

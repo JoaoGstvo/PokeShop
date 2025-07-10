@@ -25,6 +25,7 @@ root.render(
         <Route path="/login-administrativo" element={<LoginAdministrativo />} />
         <Route path="/carrinho" element={<PaginaCarrinho />} />
         <Route path="/pagamento" element={<PaginaPagamento />} />
+        <Route path="/painel-administrativo" element={<PainelAdministrativo />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

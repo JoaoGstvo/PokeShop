@@ -1,5 +1,4 @@
-
-.login-page {
+.pagina-login-usuario {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
@@ -7,38 +6,47 @@
     min-height: 100vh;
 }
 
-.auth-section {
+.secao-autenticacao-usuario {
     padding: 8rem 0 4rem;
     min-height: 100vh;
     display: flex;
     align-items: center;
 }
 
-.auth-container-login {
+.container-login-usuario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container-login-usuario-conteudo {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
     max-width: 1000px;
-    margin: 0 auto;
-    padding-left: 12rem;
+    width: 100%;
 }
 
-.auth-card {
+.cartao-login-usuario {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 3rem;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    min-width: 340px;
+    max-width: 450px;
+    justify-self: center;
 }
 
-.auth-header {
+.cabecalho-login-usuario {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.auth-header h2 {
+.cabecalho-login-usuario h2, #titulo-cor-login-usuario {
     color: #3b82f6;
     font-size: 2rem;
     margin-bottom: 0.5rem;
@@ -48,44 +56,39 @@
     gap: 0.5rem;
 }
 
-
-#titulo-cor {
-    color: #5a67ff;
+#cor-botao-login-usuario {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
 }
 
-#cor-btn-login {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-
-}
-
-.auth-header i {
+.cabecalho-login-usuario i {
     color: #fbbf24;
 }
 
-.auth-header p {
+.cabecalho-login-usuario p {
     color: #6b7280;
     font-size: 1rem;
 }
 
-.auth-form {
+.formulario-login-usuario {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.form-group {
+.grupo-formulario-login-usuario {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.form-group label {
+.grupo-formulario-login-usuario label {
     color: #374151;
     font-weight: 600;
     font-size: 0.9rem;
 }
 
-.form-input {
+.campo-formulario-login-usuario {
     padding: 0.875rem 1rem;
     border: 2px solid #e5e7eb;
     border-radius: 10px;
@@ -94,45 +97,76 @@
     background: white;
 }
 
-.form-input:focus {
+.campo-formulario-login-usuario:focus {
     outline: none;
     border-color: #3b82f6;
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-.form-options {
+.opcoes-formulario-login-usuario {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 0.5rem 0;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
-.checkbox-container {
+.container-checkbox-login-usuario {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.5rem;
     cursor: pointer;
     font-size: 0.9rem;
     color: #6b7280;
+    line-height: 1.4;
+    position: relative;
+    padding-left: 24px;
 }
 
-.checkbox-container input {
+.container-checkbox-login-usuario input {
     width: 16px;
     height: 16px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
 }
 
-.forgot-link {
+.marcador-checkbox-login-usuario {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    background: #fff;
+    border: 2px solid #3b82f6;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.container-checkbox-login-usuario input:checked + .marcador-checkbox-login-usuario {
+    background: #3b82f6;
+    border-color: #3b82f6;
+}
+
+.link-esqueci-senha-login-usuario {
     color: #3b82f6;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
+    font-weight: 600;
 }
 
-.forgot-link:hover {
-    color: #2563eb;
+.link-esqueci-senha-login-usuario:hover {
+    color: #764ba2;
 }
 
-.btn {
+#titulo-cor-login-usuario-cadastro {
+    color: #3b82f6;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.botao-login-usuario {
     padding: 0.875rem 1.5rem;
     border: none;
     border-radius: 10px;
@@ -147,28 +181,18 @@
     font-size: 1rem;
 }
 
-.btn-primary {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    color: white;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
-}
-
-.btn-large {
+.botao-grande-login-usuario {
     padding: 1rem 2rem;
     font-size: 1.1rem;
 }
 
-.auth-divider {
+.divisor-login-usuario {
     text-align: center;
     position: relative;
     margin: 1rem 0;
 }
 
-.auth-divider::before {
+.divisor-login-usuario::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -178,39 +202,44 @@
     background: #e5e7eb;
 }
 
-.auth-divider span {
+.divisor-login-usuario span {
     background: rgba(255, 255, 255, 0.95);
     padding: 0 1rem;
     color: #6b7280;
     font-size: 0.9rem;
 }
 
-.auth-redirect {
+.redirecionamento-login-usuario {
     text-align: center;
 }
 
-.auth-redirect p {
+.redirecionamento-login-usuario p {
     color: #6b7280;
     margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    display: block;
+    text-align: center;
 }
 
-.auth-link-redirect {
-    color: #3b82f6;
+.link-redirecionamento-login-usuario {
+    color: #059669;
     text-decoration: none;
     font-weight: 600;
 }
 
-.auth-link-redirect:hover {
-    color: #2563eb;
-}
-
-.auth-decoration {
+.decoracao-login-usuario {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    min-width: 340px;
+    max-width: 450px;
+    justify-self: center;
 }
 
-.pokemon-silhouette {
+.silhueta-pokemon-login-usuario {
     position: relative;
     width: 300px;
     height: 300px;
@@ -223,7 +252,7 @@
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.pokemon-silhouette img {
+.silhueta-pokemon-login-usuario img {
     width: 250px;
     height: 250px;
     object-fit: contain;
@@ -234,6 +263,21 @@
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 900px) {
+    .container-login-usuario-conteudo {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    .cartao-login-usuario {
+        padding: 2rem;
+        order: 1;
+    }
+    .decoracao-login-usuario {
+        order: 2;
+    }
 }
 
 @media (max-width: 768px) {
