@@ -1,0 +1,102 @@
+
+.rodape-principal {
+    background: #1f2937;
+    color: white;
+    margin-top: auto;
+}
+
+.container-rodape {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 20px 1rem;
+}
+
+.conteudo-rodape {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.secao-rodape h3 {
+    color: #3b82f6;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.secao-rodape h4 {
+    color: #f3f4f6;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.secao-rodape p {
+    color: #d1d5db;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.secao-rodape ul {
+    list-style: none;
+    padding: 0;
+}
+
+.secao-rodape ul li {
+    margin-bottom: 0.5rem;
+}
+
+.secao-rodape ul li a {
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.secao-rodape ul li a:hover {
+    color: #3b82f6;
+}
+
+.link-administrativo {
+    display: inline-block;
+    background: #ef4444;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.link-administrativo:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+.base-rodape {
+    border-top: 1px solid #374151;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.base-rodape p {
+    color: #9ca3af;
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .conteudo-rodape {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .conteudo-rodape {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .container-rodape {
+        padding: 2rem 15px 1rem;
+    }
+}

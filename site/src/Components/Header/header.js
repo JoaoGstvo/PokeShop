@@ -1,26 +1,27 @@
-import React from "react";
-import './header.css';
 
-function Header() {
+import React from "react";
+import './cabecalho-principal.css';
+
+function CabecalhoPrincipal() {
     return (
-        <header className="header">
-            <div className="container">
-                <div className="logo">
+        <header className="cabecalho-principal">
+            <div className="container-cabecalho">
+                <div className="logotipo-principal">
                     <h1><i className="fas fa-bolt"></i> PokéShop</h1>
                 </div>
-                <nav className="nav-header">
-                    <a href="/" className="nav-link">Início</a>
-                    <a href="/#products" className="nav-link">Pokémons</a>
-                    <a href="/carrinho" className="nav-link cart-link">
+                <nav className="navegacao-cabecalho">
+                    <a href="/" className="link-navegacao">Início</a>
+                    <a href="/#produtos" className="link-navegacao">Pokémons</a>
+                    <a href="/carrinho" className="link-navegacao link-carrinho">
                         <i className="fas fa-shopping-cart"></i> Carrinho
-                        <span className="cart-count">2</span>
+                        <span className="contador-carrinho">2</span>
                     </a>
-                    <a href="/login" className="nav-link auth-link">Login</a>
-                    <a href="/cadastro" className="nav-link auth-link cadastro-link">Cadastro</a>
+                    <a href="/login" className="link-navegacao link-autenticacao">Login</a>
+                    <a href="/cadastro" className="link-navegacao link-autenticacao link-cadastro">Cadastro</a>
                 </nav>
             </div>
         </header>
     );
 }
 
-export default Header;
+export default CabecalhoPrincipal;

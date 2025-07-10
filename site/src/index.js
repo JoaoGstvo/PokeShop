@@ -3,29 +3,28 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Landing from './Pages/LandingPage/index.js';
-import PokemonDetail from './Pages/PokemonDetails/index.js';
-import AdminPanel from './Pages/Adm/index.js';
-import Login from './Pages/Login/index.js';
-import Cadastro from './Pages/Cadastro/index.js';
-import LoginADM from './Pages/Adm/Login/login.js';
-import Carrinho from './Pages/Carrinho/index.js';
-import Pagamento from './Pages/Pagamento/index.js';
+import PaginaInicial from './Pages/LandingPage/index.js';
+import DetalhesPokemon from './Pages/PokemonDetails/index.js';
+import PainelAdministrativo from './Pages/Adm/index.js';
+import PaginaLogin from './Pages/Login/index.js';
+import PaginaCadastro from './Pages/Cadastro/index.js';
+import LoginAdministrativo from './Pages/Adm/Login/login.js';
+import PaginaCarrinho from './Pages/Carrinho/index.js';
+import PaginaPagamento from './Pages/Pagamento/index.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/pokemonDetail" element={<PokemonDetail />} />
-        <Route path="/admin" element={<AdminPanel />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/adminlogin" element={<LoginADM />} />
-        <Route path="/carrinho" element={<Carrinho />} />
-        <Route path="/pagamento" element={<Pagamento />} />
-        {/* Add more routes as needed */}
+        <Route path="/" element={<PaginaInicial />} />
+        <Route path="/detalhes-pokemon" element={<DetalhesPokemon />} />
+        <Route path="/painel-administrativo" element={<PainelAdministrativo />} />
+        <Route path="/login" element={<PaginaLogin />} />
+        <Route path="/cadastro" element={<PaginaCadastro />} />
+        <Route path="/login-administrativo" element={<LoginAdministrativo />} />
+        <Route path="/carrinho" element={<PaginaCarrinho />} />
+        <Route path="/pagamento" element={<PaginaPagamento />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -1,33 +1,34 @@
-import React from "react";
-import './footer.css';
 
-function Footer() {
+import React from "react";
+import './rodape-principal.css';
+
+function RodapePrincipal() {
     return (
-        <footer className="footer">
-            <div className="container">
-                <div className="footer-content">
-                    <div className="footer-section" id="footer-logo">
+        <footer className="rodape-principal">
+            <div className="container-rodape">
+                <div className="conteudo-rodape">
+                    <div className="secao-rodape" id="logotipo-rodape">
                         <h3>PokéShop</h3>
                         <p>A melhor loja de Pokémons do mundo!</p>
                     </div>
-                    <div className="footer-section">
+                    <div className="secao-rodape">
                         <h4>Links Úteis</h4>
                         <ul>
                             <li><a href="/">Início</a></li>
-                            <li><a href="/#products">Pokémons</a></li>
+                            <li><a href="/#produtos">Pokémons</a></li>
                         </ul>
                     </div>
-                    <div className="footer-section">
+                    <div className="secao-rodape">
                         <h4>Contato</h4>
                         <p>Email: contato@pokéshop.com</p>
                         <p>Telefone: (11) 99999-9999</p>
                     </div>
 
-                    <div className="footer-section" id="admin-btn">
-                        <a href="/adminlogin" className="nav-link admin-link">Área Admin</a>
+                    <div className="secao-rodape" id="botao-administrativo">
+                        <a href="/login-administrativo" className="link-navegacao link-administrativo">Área Admin</a>
                     </div>
                 </div>
-                <div className="footer-bottom">
+                <div className="base-rodape">
                     <p>&copy; 2025 PokéShop. Todos os direitos reservados.</p>
                 </div>
             </div>
@@ -35,4 +36,4 @@ function Footer() {
     );
 }
 
-export default Footer;
+export default RodapePrincipal;

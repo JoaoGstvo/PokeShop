@@ -1,0 +1,226 @@
+
+.pagina-login-administrativo {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-login-administrativo {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 450px;
+    width: 100%;
+    margin: 2rem;
+}
+
+.cabecalho-login-administrativo {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cabecalho-login-administrativo h2 {
+    color: #1e293b;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 700;
+}
+
+.cabecalho-login-administrativo i {
+    color: #ef4444;
+    font-size: 2rem;
+}
+
+.distintivo-administrativo {
+    display: flex;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    width: 30%;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.formulario-login-administrativo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.grupo-formulario-administrativo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.grupo-formulario-administrativo label {
+    color: #374151;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.grupo-formulario-administrativo label i {
+    color: #6b7280;
+    width: 16px;
+}
+
+.campo-formulario-administrativo {
+    padding: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.campo-formulario-administrativo:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.botao-login-administrativo {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: white;
+    margin-top: 1rem;
+}
+
+.botao-login-administrativo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(30, 41, 59, 0.3);
+    background: linear-gradient(135deg, #334155, #475569);
+}
+
+.botao-login-administrativo i {
+    font-size: 1.1rem;
+}
+
+.aviso-seguranca-administrativo {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f1f5f9;
+    border-radius: 8px;
+    border-left: 4px solid #ef4444;
+}
+
+.aviso-seguranca-administrativo p {
+    color: #475569;
+    font-size: 0.875rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.aviso-seguranca-administrativo i {
+    color: #ef4444;
+}
+
+.redirecionamento-administrativo {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.redirecionamento-administrativo p {
+    color: #64748b;
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+}
+
+.link-retorno-administrativo {
+    color: #1e293b;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.link-retorno-administrativo:hover {
+    background: #f8fafc;
+    border-color: #1e293b;
+}
+
+.link-retorno-administrativo i {
+    font-size: 0.875rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container-login-administrativo {
+        padding: 2rem;
+        margin: 1rem;
+        border-radius: 16px;
+    }
+    
+    .cabecalho-login-administrativo h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-login-administrativo {
+        padding: 1.5rem;
+    }
+    
+    .cabecalho-login-administrativo h2 {
+        font-size: 1.6rem;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .campo-formulario-administrativo {
+        padding: 0.875rem 1rem;
+    }
+    
+    .botao-login-administrativo {
+        padding: 0.875rem 1.5rem;
+    }
+    
+    .distintivo-administrativo {
+        width: 50%;
+    }
+}

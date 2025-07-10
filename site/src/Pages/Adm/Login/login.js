@@ -1,65 +1,65 @@
 
 import React from "react";
-import "./login.css";
+import "./login-administrativo.css";
 
-function AdminLogin() {
+function LoginAdministrativo() {
     return (
-        <main className="admin-login-page">
-            <div className="admin-login-container">
-                <div className="admin-login-header">
+        <main className="pagina-login-administrativo">
+            <div className="container-login-administrativo">
+                <div className="cabecalho-login-administrativo">
                     <h2>
                         <i className="fas fa-shield-alt"></i>
                         Área Administrativa
                     </h2>
-                    <div className="admin-badge">
+                    <div className="distintivo-administrativo">
                         <i className="fas fa-lock"></i>
                         Admin Only
                     </div>
                 </div>
                 
-                <form className="admin-login-form">
-                    <div className="admin-form-group">
-                        <label htmlFor="admin-email">
+                <form className="formulario-login-administrativo">
+                    <div className="grupo-formulario-administrativo">
+                        <label htmlFor="email-administrativo">
                             <i className="fas fa-user-shield"></i>
                             Email Administrativo
                         </label>
                         <input 
                             type="email" 
-                            id="admin-email" 
+                            id="email-administrativo" 
                             placeholder="Digite seu email de administrador"
-                            className="admin-form-input"
+                            className="campo-formulario-administrativo"
                         />
                     </div>
                     
-                    <div className="admin-form-group">
-                        <label htmlFor="admin-password">
+                    <div className="grupo-formulario-administrativo">
+                        <label htmlFor="senha-administrativa">
                             <i className="fas fa-key"></i>
                             Senha Administrativa
                         </label>
                         <input 
                             type="password" 
-                            id="admin-password" 
+                            id="senha-administrativa" 
                             placeholder="Digite sua senha de administrador"
-                            className="admin-form-input"
+                            className="campo-formulario-administrativo"
                         />
                     </div>
                     
-                    <button type="submit" className="admin-login-btn">
+                    <button type="submit" className="botao-login-administrativo">
                         <i className="fas fa-sign-in-alt"></i>
                         Acessar Painel Admin
                     </button>
                 </form>
                 
-                <div className="admin-security-notice">
+                <div className="aviso-seguranca-administrativo">
                     <p>
                         <i className="fas fa-exclamation-triangle"></i>
                         Esta área é monitorada. Todos os acessos são registrados.
                     </p>
                 </div>
                 
-                <div className="admin-redirect">
+                <div className="redirecionamento-administrativo">
                     <p>Não é um administrador?</p>
-                    <a href="/" className="admin-back-link">
+                    <a href="/" className="link-retorno-administrativo">
                         <i className="fas fa-arrow-left"></i>
                         Voltar ao Site Principal
                     </a>
@@ -69,4 +69,4 @@ function AdminLogin() {
     );
 }
 
-export default AdminLogin;
+export default LoginAdministrativo;
