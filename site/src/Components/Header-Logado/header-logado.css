@@ -1,0 +1,94 @@
+
+.header-logado {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-logado .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 20px;
+}
+
+.header-logado .logo h1 {
+    color: #3b82f6;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.header-logado .logo i {
+    color: #fbbf24;
+    margin-right: 0.5rem;
+}
+
+.nav-header-logado {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-logado .nav-link {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.header-logado .nav-link:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+.header-logado .cart-link {
+    background: #fbbf24 !important;
+    color: #1f2937 !important;
+    position: relative;
+}
+
+.header-logado .cart-link:hover {
+    background: #f59e0b !important;
+}
+
+.header-logado .cart-count {
+    background: #ef4444;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+    min-width: 1.5rem;
+    text-align: center;
+}
+
+.perfil-container {
+    position: relative;
+}
+
+.perfil-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.perfil-avatar:hover {
+    border-color: #3b82f6;
+    transform: scale(1.05);
+}
+
+.perfil-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}

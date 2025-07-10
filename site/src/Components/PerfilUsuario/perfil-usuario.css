@@ -1,0 +1,138 @@
+
+.perfil-dropdown {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e5e7eb;
+    min-width: 280px;
+    z-index: 1001;
+    overflow: hidden;
+}
+
+.perfil-menu {
+    padding: 0;
+}
+
+.perfil-header {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+}
+
+.usuario-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.usuario-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.usuario-dados h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.usuario-dados p {
+    margin: 0.25rem 0 0 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.perfil-opcoes {
+    padding: 0.5rem 0;
+}
+
+.opcao-perfil {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    color: #374151;
+}
+
+.opcao-perfil:hover {
+    background: #f3f4f6;
+}
+
+.opcao-perfil i:first-child {
+    width: 20px;
+    color: #6b7280;
+}
+
+.opcao-perfil span {
+    flex: 1;
+    text-align: left;
+}
+
+.opcao-perfil i:last-child {
+    color: #9ca3af;
+    font-size: 0.8rem;
+}
+
+.opcao-sair {
+    color: #ef4444 !important;
+}
+
+.opcao-sair:hover {
+    background: #fef2f2 !important;
+}
+
+.opcao-sair i {
+    color: #ef4444 !important;
+}
+
+.divisor {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 0.5rem 0;
+}
+
+.tela-perfil {
+    padding: 1.5rem;
+}
+
+.tela-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.btn-voltar {
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.btn-voltar:hover {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.tela-header h3 {
+    margin: 0;
+    color: #374151;
+    font-size: 1.1rem;
+}
