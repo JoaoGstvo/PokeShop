@@ -1,6 +1,6 @@
 
 import "./index.css";
-import Header from '../../Components/Header/header.js';
+import Header from '../../Components/Header-Inicial/header-inicial.js';
 import Footer from '../../Components/Footer/footer.js';
 
 function Carrinho() {
