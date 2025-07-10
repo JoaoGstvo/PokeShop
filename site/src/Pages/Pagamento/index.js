@@ -1,13 +1,14 @@
-
 import "./index.css";
 import Header from '../../Components/Header/header.js';
 import Footer from '../../Components/Footer/footer.js';
+import React, { useState } from 'react';
 
 function Pagamento() {
+    const [paymentMethod, setPaymentMethod] = useState('cartao');
+
     return (
         <main className="payment-page">
             <Header />
-            
             <section className="payment-section">
                 <div className="container">
                     <div className="payment-header">
@@ -17,9 +18,9 @@ function Pagamento() {
 
                     <div className="payment-content">
                         <div className="payment-forms">
-                            {/* Informações de Entrega */}
+                            {/* Informações do Comprador */}
                             <div className="form-section">
-                                <h2><i className="fas fa-shipping-fast"></i> Informações de Entrega</h2>
+                                <h2><i className="fas fa-user"></i> Dados do Treinador</h2>
                                 <form className="payment-form">
                                     <div className="form-row">
                                         <div className="form-group">
@@ -31,40 +32,14 @@ function Pagamento() {
                                             <input type="email" id="email" placeholder="Digite seu email" />
                                         </div>
                                     </div>
-                                    
                                     <div className="form-row">
                                         <div className="form-group">
                                             <label htmlFor="telefone">Telefone</label>
                                             <input type="tel" id="telefone" placeholder="(11) 99999-9999" />
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="cep">CEP</label>
-                                            <input type="text" id="cep" placeholder="00000-000" />
-                                        </div>
-                                    </div>
-
-                                    <div className="form-group">
-                                        <label htmlFor="endereco">Endereço</label>
-                                        <input type="text" id="endereco" placeholder="Rua, número" />
-                                    </div>
-
-                                    <div className="form-row">
-                                        <div className="form-group">
-                                            <label htmlFor="bairro">Bairro</label>
-                                            <input type="text" id="bairro" placeholder="Digite o bairro" />
-                                        </div>
-                                        <div className="form-group">
-                                            <label htmlFor="cidade">Cidade</label>
-                                            <input type="text" id="cidade" placeholder="Digite a cidade" />
-                                        </div>
-                                        <div className="form-group">
-                                            <label htmlFor="estado">Estado</label>
-                                            <select id="estado">
-                                                <option value="">Selecione</option>
-                                                <option value="SP">São Paulo</option>
-                                                <option value="RJ">Rio de Janeiro</option>
-                                                <option value="MG">Minas Gerais</option>
-                                            </select>
+                                            <label htmlFor="friendcode">Código de Amizade</label>
+                                            <input type="text" id="friendcode" placeholder="0000 0000 0000" />
                                         </div>
                                     </div>
                                 </form>
@@ -73,71 +48,66 @@ function Pagamento() {
                             {/* Método de Pagamento */}
                             <div className="form-section">
                                 <h2><i className="fas fa-credit-card"></i> Método de Pagamento</h2>
-                                
                                 <div className="payment-methods">
                                     <div className="payment-method">
-                                        <input type="radio" id="cartao" name="payment" value="cartao" defaultChecked />
+                                        <input type="radio" id="cartao" name="payment" value="cartao" checked={paymentMethod === 'cartao'} onChange={() => setPaymentMethod('cartao')} />
                                         <label htmlFor="cartao" className="method-label">
                                             <i className="fas fa-credit-card"></i>
                                             <span>Cartão de Crédito</span>
                                         </label>
                                     </div>
-                                    
                                     <div className="payment-method">
-                                        <input type="radio" id="pix" name="payment" value="pix" />
+                                        <input type="radio" id="pix" name="payment" value="pix" checked={paymentMethod === 'pix'} onChange={() => setPaymentMethod('pix')} />
                                         <label htmlFor="pix" className="method-label">
                                             <i className="fas fa-qrcode"></i>
                                             <span>PIX</span>
                                         </label>
                                     </div>
-                                    
-                                    <div className="payment-method">
-                                        <input type="radio" id="boleto" name="payment" value="boleto" />
-                                        <label htmlFor="boleto" className="method-label">
-                                            <i className="fas fa-barcode"></i>
-                                            <span>Boleto Bancário</span>
-                                        </label>
-                                    </div>
                                 </div>
 
-                                <div className="card-details">
-                                    <div className="form-group">
-                                        <label htmlFor="card-number">Número do Cartão</label>
-                                        <input type="text" id="card-number" placeholder="0000 0000 0000 0000" />
-                                    </div>
-                                    
-                                    <div className="form-row">
+                                {paymentMethod === 'cartao' && (
+                                    <div className="card-details">
                                         <div className="form-group">
-                                            <label htmlFor="card-name">Nome no Cartão</label>
-                                            <input type="text" id="card-name" placeholder="Nome como no cartão" />
+                                            <label htmlFor="card-number">Número do Cartão</label>
+                                            <input type="text" id="card-number" placeholder="0000 0000 0000 0000" />
                                         </div>
-                                        <div className="form-group">
-                                            <label htmlFor="card-expiry">Validade</label>
-                                            <input type="text" id="card-expiry" placeholder="MM/AA" />
+                                        <div className="form-row">
+                                            <div className="form-group">
+                                                <label htmlFor="card-name">Nome no Cartão</label>
+                                                <input type="text" id="card-name" placeholder="Nome como no cartão" />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="card-expiry">Validade</label>
+                                                <input type="text" id="card-expiry" placeholder="MM/AA" />
+                                            </div>
+                                            <div className="form-group">
+                                                <label htmlFor="card-cvv">CVV</label>
+                                                <input type="text" id="card-cvv" placeholder="000" />
+                                            </div>
                                         </div>
-                                        <div className="form-group">
-                                            <label htmlFor="card-cvv">CVV</label>
-                                            <input type="text" id="card-cvv" placeholder="000" />
+                                        <div className="installments">
+                                            <label htmlFor="parcelas">Parcelamento</label>
+                                            <select id="parcelas">
+                                                <option value="1">1x de R$ 4.350,00 (à vista)</option>
+                                                <option value="2">2x de R$ 2.175,00</option>
+                                                <option value="3">3x de R$ 1.450,00</option>
+                                                <option value="6">6x de R$ 725,00</option>
+                                                <option value="12">12x de R$ 362,50</option>
+                                            </select>
                                         </div>
                                     </div>
-
-                                    <div className="installments">
-                                        <label htmlFor="parcelas">Parcelamento</label>
-                                        <select id="parcelas">
-                                            <option value="1">1x de R$ 4.350,00 (à vista)</option>
-                                            <option value="2">2x de R$ 2.175,00</option>
-                                            <option value="3">3x de R$ 1.450,00</option>
-                                            <option value="6">6x de R$ 725,00</option>
-                                            <option value="12">12x de R$ 362,50</option>
-                                        </select>
+                                )}
+                                {paymentMethod === 'pix' && (
+                                    <div className="pix-details" style={{textAlign: 'center', marginTop: '2rem'}}>
+                                        <p>Escaneie o QR Code abaixo para pagar com PIX:</p>
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/QR_code_2023.svg" alt="QR Code PIX" style={{width: '180px', margin: '1rem auto'}} />
                                     </div>
-                                </div>
+                                )}
                             </div>
                         </div>
 
                         <div className="order-summary">
                             <h2>Resumo do Pedido</h2>
-                            
                             <div className="order-items">
                                 <div className="order-item">
                                     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png" alt="Mewtwo" />
@@ -148,7 +118,6 @@ function Pagamento() {
                                     </div>
                                     <span className="item-price">R$ 2.500,00</span>
                                 </div>
-                                
                                 <div className="order-item">
                                     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" alt="Charizard Shiny" />
                                     <div className="item-info">
@@ -159,7 +128,6 @@ function Pagamento() {
                                     <span className="item-price">R$ 3.600,00</span>
                                 </div>
                             </div>
-
                             <div className="order-totals">
                                 <div className="total-line">
                                     <span>Subtotal:</span>
@@ -178,7 +146,6 @@ function Pagamento() {
                                     <span>R$ 5.950,00</span>
                                 </div>
                             </div>
-
                             <div className="security-info">
                                 <div className="security-item">
                                     <i className="fas fa-shield-alt"></i>
@@ -193,7 +160,6 @@ function Pagamento() {
                                     <span>7 dias para troca</span>
                                 </div>
                             </div>
-
                             <div className="order-actions">
                                 <a href="/carrinho" className="btn btn-secondary">
                                     <i className="fas fa-arrow-left"></i> Voltar ao Carrinho
@@ -206,7 +172,6 @@ function Pagamento() {
                     </div>
                 </div>
             </section>
-
             <Footer />
         </main>
     );
