@@ -671,6 +671,33 @@
         margin: 0;
     }
 
+    /* Filtros Discretos */
+    .filtros-discretos {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .filtro-select {
+        padding: 0.75rem 1.25rem;
+        border: 1.5px solid #e5e7eb;
+        border-radius: 8px;
+        background: #f9fafb;
+        color: #374151;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: border-color 0.2s;
+        min-width: 180px;
+        box-shadow: 0 2px 8px rgba(59,130,246,0.03);
+    }
+
+    .filtro-select:focus {
+        outline: none;
+        border-color: #3b82f6;
+        background: #fff;
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
         .header .container {
@@ -729,6 +756,15 @@
 
         .acoes-card .btn {
             width: 100%;
+        }
+
+        .filtros-discretos {
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .filtro-select {
+            min-width: 100%;
         }
     }
 

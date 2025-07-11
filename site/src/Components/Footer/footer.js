@@ -16,6 +16,7 @@ function RodapePrincipal() {
                         <ul>
                             <li><a href="/">Início</a></li>
                             <li><a href="/#produtos">Pokémons</a></li>
+                            <li><a href="/">Como Funciona</a></li>
                         </ul>
                     </div>
                     <div className="secao-rodape">

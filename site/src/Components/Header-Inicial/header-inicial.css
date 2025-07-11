@@ -16,9 +16,44 @@
     gap: 2rem;
 }
 
+.header-flex-custom {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 72px;
+}
+
+.header-espaco {
+    flex: 0 0 24px;
+}
+
+.header-espaco-maior {
+    flex: 1 1 64px;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo h1 {
+    color: #3b82f6;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    color: #fbbf24;
+    margin-right: 0.5rem;
+}
+
 .barra-pesquisa-container {
-    flex: 1;
-    max-width: 500px;
+    min-width: 220px;
+    max-width: 400px;
+    flex: 2 1 320px;
+    margin: 0 8px;
 }
 
 .formulario-pesquisa {
@@ -68,66 +103,69 @@
     transform: scale(1.05);
 }
 
-.logo h1 {
-    color: #3b82f6;
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-.logo i {
-    color: #fbbf24;
-    margin-right: 0.5rem;
-}
-
 .nav-header {
     display: flex;
     align-items: center;
-    gap: 2rem;
-
+    gap: 1.2rem;
+    margin-left: 8px;
 }
 
 .nav-link {
     text-decoration: none;
     color: #374151;
     font-weight: 500;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.1rem;
     border-radius: 8px;
     transition: all 0.3s ease;
+    background: none;
+    font-size: 1rem;
 }
 
 .nav-link:hover,
 .nav-link.active {
+    background: #e0e7ff;
+    color: #2563eb;
+}
+
+.nav-link-login {
+    background: #5261ff;
+    color: #fff !important;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+.nav-link-login:hover {
     background: #3b82f6;
-    color: white;
+    color: #fff !important;
 }
 
-.admin-link {
-    background: #ef4444 !important;
-    color: white !important;
+.nav-link-cadastro {
+    background: #059669;
+    color: #fff !important;
+    font-weight: 600;
+    margin-left: 0.5rem;
 }
 
-.admin-link:hover {
-    background: #dc2626 !important;
+.nav-link-cadastro:hover {
+    background: #047857;
+    color: #fff !important;
 }
 
-.auth-link {
-    background: #5261ff !important;
-    color: white !important;
+.nav-link-carrinho {
+    background: #fbbf24;
+    color: #1f2937 !important;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    position: relative;
 }
 
-.auth-link:hover {
-    background: #4b5563 !important;
+.nav-link-carrinho:hover {
+    background: #f59e0b;
+    color: #1f2937 !important;
 }
-
-.cadastro-link {
-    background: #059669 !important;
-    color: white !important;
-}
-
-.cadastro-link:hover {
-    background: #047857 !important;
-}
-
 .cart-link {
     background: #fbbf24 !important;
     color: #1f2937 !important;
@@ -150,45 +188,58 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1100px) {
+    .header-flex-custom {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    .header-espaco-maior {
+        display: none;
+    }
+    .barra-pesquisa-container {
+        min-width: 160px;
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     .header .container {
         flex-direction: column;
         gap: 1rem;
     }
 
+    .header-flex-custom {
+        flex-direction: column;
+        gap: 0.5rem;
+        min-height: unset;
+    }
+    .header-espaco,
+    .header-espaco-maior {
+        display: none;
+    }
+    .nav-header {
+        gap: 0.7rem;
+        margin-left: 0;
+    }
+
     .barra-pesquisa-container {
-        order: 1;
+        margin: 0;
         max-width: 100%;
     }
 
-    .nav-header {
-        order: 2;
-        gap: 1rem;
-    }
-
-    .entrada-pesquisa {
-        padding: 10px 45px 10px 12px;
-        font-size: 0.9rem;
-    }
-
-    .botao-pesquisa {
-        width: 32px;
-        height: 32px;
-        right: 6px;
+    .logo {
+        margin-bottom: 0.5rem;
     }
 }
 
 @media (max-width: 480px) {
-    .header .container {
-        padding: 1rem 10px;
+    .header-flex-custom {
+        padding: 1rem 6px;
     }
-
-    .opcoes-filtro {
-        flex-direction: column;
+    .logo h1 {
+        font-size: 1.2rem;
     }
-
-    .filtro-preco, .filtro-raridade {
-        width: 100%;
-        text-align: center;
+    .nav-header {
+        gap: 0.4rem;
     }
 }
