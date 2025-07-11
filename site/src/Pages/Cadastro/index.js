@@ -31,40 +31,24 @@ function Cadastro() {
                                     <input type="text" id="lastName" placeholder="Seu sobrenome" className="form-input" />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="email">Email</label>
-                                    <input type="email" id="email" placeholder="Digite seu email" className="form-input" />
-                                </div>
-                                <div className="form-group">
                                     <label htmlFor="phone">Telefone</label>
                                     <input type="tel" id="phone" placeholder="(11) 99999-9999" className="form-input" />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="password">Senha</label>
-                                    <input type="password" id="password" placeholder="Digite sua senha" className="form-input" />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="confirmPassword">Confirmar Senha</label>
-                                    <input type="password" id="confirmPassword" placeholder="Confirme sua senha" className="form-input" />
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="birthDate">Data de Nascimento</label>
                                     <input type="date" id="birthDate" className="form-input" />
                                 </div>
+                                <div className="form-group">
+                                    <label htmlFor="email">Email</label>
+                                    <input type="email" id="email" placeholder="Digite seu email" className="form-input" />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="password">Senha</label>
+                                    <input type="password" id="password" placeholder="Digite sua senha" className="form-input" />
+                                </div>
+                                
                                 <div className="form-group form-group-empty"></div>
-                                <div className="form-group form-group-full">
-                                    <label className="checkbox-container">
-                                        <input type="checkbox" />
-                                        <span className="checkmark"></span>
-                                        Aceito os <a href="/" className="terms-link">termos de uso</a> e <a href="/" className="terms-link">política de privacidade</a>
-                                    </label>
-                                </div>
-                                <div className="form-group form-group-full">
-                                    <label className="checkbox-container">
-                                        <input type="checkbox" />
-                                        <span className="checkmark"></span>
-                                        Quero receber novidades sobre Pokémons por email
-                                    </label>
-                                </div>
+                                
                                 <div className="form-group form-group-full">
                                     <button type="submit" className="btn btn-primary btn-large">
                                         <i className="fas fa-user-plus"></i>

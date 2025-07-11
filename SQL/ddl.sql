@@ -2,17 +2,14 @@
 -- Execute este script no seu banco de dados MySQL/PostgreSQL
 
 -- Tabela de usuários
-CREATE TABLE usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    sobrenome VARCHAR(100) NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    telefone VARCHAR(20),
-    senha VARCHAR(255) NOT NULL,
-    data_nascimento DATE,
-    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    ativo BOOLEAN DEFAULT TRUE
+CREATE TABLE IF NOT EXISTS usuarios (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  sobrenome VARCHAR(100) NOT NULL,
+  telefone VARCHAR(20),
+  data_nascimento DATE,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  senha VARCHAR(255) NOT NULL
 );
 
 -- Tabela de administradores
