@@ -1,0 +1,440 @@
+Cadastro de novo usuário
+Método: POST
+Rota: /api/auth/register
+Descrição: Cria um novo usuário na plataforma.
+Corpo da requisição (JSON):
+{
+"nome": "",
+"sobrenome": "",
+"email": "",
+"telefone": "",
+"senha": "",
+"dataNascimento": ""
+}
+Resposta (JSON):
+{
+"id": "",
+"token": "",
+"usuario": {}
+}
+
+
+...........
+
+
+Login de usuário
+Método: POST
+Rota: /api/auth/login
+Descrição: Autentica o usuário e retorna o token.
+Corpo da requisição (JSON):
+{
+"email": "",
+"senha": ""
+}
+Resposta (JSON):
+{
+"token": "",
+"usuario": {}
+}
+
+
+...........
+
+
+Login de administrador
+Método: POST
+Rota: /api/auth/admin/login
+Descrição: Autentica o administrador e retorna o token.
+Corpo da requisição (JSON):
+{
+"email": "",
+"senha": ""
+}
+Resposta (JSON):
+{
+"token": "",
+"admin": {}
+}
+
+
+...........
+
+
+Logout
+Método: POST
+Rota: /api/auth/logout
+Descrição: Encerra a sessão do usuário logado.
+Cabeçalhos: Authorization: Bearer token
+
+
+...........
+
+
+Ver perfil do usuário
+Método: GET
+Rota: /api/users/profile
+Descrição: Retorna os dados do perfil do usuário logado.
+Cabeçalhos: Authorization: Bearer token
+Resposta (JSON):
+{
+"id": "",
+"nome": "",
+"email": "",
+"telefone": "",
+"dataNascimento": ""
+}
+
+
+...........
+
+
+Atualizar perfil do usuário
+Método: PUT
+Rota: /api/users/profile
+Descrição: Atualiza os dados do perfil do usuário.
+Cabeçalhos: Authorization: Bearer token
+Corpo da requisição (JSON):
+{
+"nome": "",
+"sobrenome": "",
+"email": "",
+"telefone": ""
+}
+
+
+...........
+
+
+Ver pedidos do usuário
+Método: GET
+Rota: /api/users/orders
+Descrição: Lista os pedidos feitos pelo usuário.
+Cabeçalhos: Authorization: Bearer token
+Resposta (JSON):
+[
+{
+"id": "",
+"data": "",
+"total": 0,
+"status": "",
+"itens": []
+}
+]
+
+
+...........
+
+
+Listar pokémons
+Método: GET
+Rota: /api/pokemons
+Descrição: Lista todos os pokémons com filtros opcionais.
+Parâmetros na URL (opcional): category, page, limit, sort, search
+Resposta (JSON):
+{
+"pokemons": [],
+"totalPages": 0,
+"currentPage": 1
+}
+
+
+...........
+
+
+Ver detalhes de um pokémon
+Método: GET
+Rota: /api/pokemons/:id
+Descrição: Retorna os dados de um pokémon específico.
+Resposta (JSON):
+{
+"id": "",
+"nome": "",
+"numero": 0,
+"tipo": "",
+"preco": 0,
+"descricao": "",
+"stats": {},
+"movimentos": [],
+"imagem": "",
+"categoria": ""
+}
+
+
+...........
+
+
+Criar pokémon (Admin)
+Método: POST
+Rota: /api/pokemons
+Descrição: Cria um novo pokémon (somente admin).
+Cabeçalhos: Authorization: Bearer admin_token
+Corpo da requisição (JSON):
+{
+"nome": "",
+"numero": 0,
+"tipo": "",
+"preco": 0,
+"descricao": "",
+"stats": {},
+"movimentos": [],
+"imagem": "",
+"categoria": ""
+}
+
+
+...........
+
+
+Editar pokémon (Admin)
+Método: PUT
+Rota: /api/pokemons/:id
+Descrição: Atualiza os dados de um pokémon (somente admin).
+Cabeçalhos: Authorization: Bearer admin_token
+Corpo da requisição (JSON):
+{
+"dadosAtualizados": "..."
+}
+
+
+...........
+
+
+Deletar pokémon (Admin)
+Método: DELETE
+Rota: /api/pokemons/:id
+Descrição: Remove um pokémon do sistema (somente admin).
+Cabeçalhos: Authorization: Bearer admin_token
+
+
+...........
+
+
+Ver carrinho
+Método: GET
+Rota: /api/cart
+Descrição: Retorna os itens no carrinho do usuário.
+Cabeçalhos: Authorization: Bearer token
+Resposta (JSON):
+{
+"itens": [
+{
+"pokemonId": "",
+"quantidade": 0,
+"preco": 0
+}
+],
+"total": 0
+}
+
+
+...........
+
+
+Adicionar item ao carrinho
+Método: POST
+Rota: /api/cart/add
+Descrição: Adiciona um pokémon ao carrinho.
+Cabeçalhos: Authorization: Bearer token
+Corpo da requisição (JSON):
+{
+"pokemonId": "",
+"quantidade": 1
+}
+
+
+...........
+
+
+Atualizar quantidade no carrinho
+Método: PUT
+Rota: /api/cart/update/:pokemonId
+Descrição: Atualiza a quantidade de um item no carrinho.
+Cabeçalhos: Authorization: Bearer token
+Corpo da requisição (JSON):
+{
+"quantidade": 2
+}
+
+
+...........
+
+
+Remover item do carrinho
+Método: DELETE
+Rota: /api/cart/remove/:pokemonId
+Descrição: Remove um item específico do carrinho.
+Cabeçalhos: Authorization: Bearer token
+
+
+...........
+
+
+Limpar carrinho
+Método: DELETE
+Rota: /api/cart/clear
+Descrição: Remove todos os itens do carrinho.
+Cabeçalhos: Authorization: Bearer token
+
+
+...........
+
+
+Criar pedido
+Método: POST
+Rota: /api/orders
+Descrição: Finaliza o carrinho e cria um pedido.
+Cabeçalhos: Authorization: Bearer token
+Corpo da requisição (JSON):
+{
+"dadosComprador": {},
+"metodoPagamento": "",
+"dadosCartao": {},
+"itens": []
+}
+Resposta (JSON):
+{
+"pedidoId": "",
+"status": "",
+"total": 0
+}
+
+
+...........
+
+
+Ver detalhes do pedido
+Método: GET
+Rota: /api/orders/:id
+Descrição: Mostra os dados de um pedido específico.
+Cabeçalhos: Authorization: Bearer token
+Resposta (JSON):
+{
+"id": "",
+"data": "",
+"status": "",
+"total": 0,
+"itens": [],
+"dadosComprador": {}
+}
+
+
+...........
+
+
+Atualizar status do pedido (Admin)
+Método: PUT
+Rota: /api/orders/:id/status
+Descrição: Permite alterar o status de um pedido.
+Cabeçalhos: Authorization: Bearer admin_token
+Corpo da requisição (JSON):
+{
+"status": "processando"
+}
+
+
+...........
+
+
+Ver estatísticas da loja (Admin)
+Método: GET
+Rota: /api/admin/stats
+Descrição: Mostra informações gerais da loja.
+Cabeçalhos: Authorization: Bearer admin_token
+Resposta (JSON):
+{
+"totalPokemonsVendidos": 0,
+"faturamentoMensal": 0,
+"pedidosPendentes": 0,
+"usuariosAtivos": 0,
+"topPokemons": []
+}
+
+
+...........
+
+
+Listar pedidos (Admin)
+Método: GET
+Rota: /api/admin/orders
+Descrição: Lista todos os pedidos com filtros.
+Cabeçalhos: Authorization: Bearer admin_token
+Parâmetros na URL: status, page, limit
+Resposta (JSON):
+{
+"pedidos": [],
+"totalPages": 0
+}
+
+
+...........
+
+
+Listar usuários (Admin)
+Método: GET
+Rota: /api/admin/users
+Descrição: Lista todos os usuários cadastrados.
+Cabeçalhos: Authorization: Bearer admin_token
+Parâmetros na URL: page, limit
+Resposta (JSON):
+{
+"usuarios": [],
+"totalPages": 0
+}
+
+
+...........
+
+
+Listar categorias
+Método: GET
+Rota: /api/categories
+Descrição: Retorna todas as categorias disponíveis.
+Resposta (JSON):
+[
+{
+"id": "",
+"nome": "",
+"icone": "",
+"quantidade": 0
+}
+]
+
+
+...........
+
+
+Criar categoria (Admin)
+Método: POST
+Rota: /api/categories
+Descrição: Cria uma nova categoria.
+Cabeçalhos: Authorization: Bearer admin_token
+Corpo da requisição (JSON):
+{
+"nome": "",
+"icone": ""
+}
+
+
+...........
+
+
+Editar categoria (Admin)
+Método: PUT
+Rota: /api/categories/:id
+Descrição: Edita o nome ou ícone de uma categoria.
+Cabeçalhos: Authorization: Bearer admin_token
+Corpo da requisição (JSON):
+{
+"nome": "",
+"icone": ""
+}
+
+
+...........
+
+
+Deletar categoria (Admin)
+Método: DELETE
+Rota: /api/categories/:id
+Descrição: Remove uma categoria (somente se não tiver pokémons vinculados).
+Cabeçalhos: Authorization: Bearer admin_token
