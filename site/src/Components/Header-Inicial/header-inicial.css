@@ -151,21 +151,6 @@
     color: #fff !important;
 }
 
-.nav-link-carrinho {
-    background: #fbbf24;
-    color: #1f2937 !important;
-    font-weight: 600;
-    margin-left: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    position: relative;
-}
-
-.nav-link-carrinho:hover {
-    background: #f59e0b;
-    color: #1f2937 !important;
-}
 .cart-link {
     background: #fbbf24 !important;
     color: #1f2937 !important;
