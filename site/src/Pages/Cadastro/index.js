@@ -1,13 +1,12 @@
 import React from "react";
 import "./index.css";
-import Header from '../../Components/Header-Inicial/header-inicial.js';
-// import HeaderL from '../../Components/Header-Logado/header-logado.js';
+import HeaderL from '../../Components/Header-Logado/header-logado.js';
 import Footer from '../../Components/Footer/footer.js';
 
 function Cadastro() {
     return (
         <main className="cadastro-page">
-            <Header />
+            <HeaderL />
             <section className="auth-section">
                 <div className="container">
                     <div className="auth-container-login">

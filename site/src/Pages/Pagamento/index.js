@@ -1,5 +1,5 @@
 import "./index.css";
-import Header from '../../Components/Header-Inicial/header-inicial.js';
+import HeaderL from '../../Components/Header-Logado/header-logado.js';
 import Footer from '../../Components/Footer/footer.js';
 import React, { useState } from 'react';
 
@@ -8,7 +8,7 @@ function Pagamento() {
 
     return (
         <main className="payment-page">
-            <Header />
+            <HeaderL />
             <section className="payment-section">
                 <div className="container">
                     <div className="payment-header">

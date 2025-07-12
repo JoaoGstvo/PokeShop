@@ -13,7 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 20px;
+    padding: 0.3rem 20px;
 }
 
 .header-logado .logo h1 {
@@ -61,7 +61,7 @@
     background: #ef4444;
     color: white;
     border-radius: 50%;
-    padding: 0.2rem 0.5rem;
+    padding: 0.1rem 0.5rem;
     font-size: 0.75rem;
     margin-left: 0.5rem;
     min-width: 1.5rem;
@@ -70,6 +70,8 @@
 
 .perfil-container {
     position: relative;
+    padding-left: 4rem;
+    padding-right: 0.5rem;
 }
 
 .perfil-avatar {

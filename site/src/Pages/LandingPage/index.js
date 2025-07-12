@@ -1,12 +1,11 @@
 import "./index.css";
-import Header from '../../Components/Header-Inicial/header-inicial.js';
-// import HeaderL from '../../Components/Header-Logado/header-logado.js';
+import HeaderL from '../../Components/Header-Logado/header-logado.js';
 import Footer from '../../Components/Footer/footer.js';
 
 function LandingPage() {
     return (
         <main className="landing-page">
-            <Header />
+            <HeaderL />
             {/* <!-- Hero Section --> */}
             <section id="home" className="hero">
                 <div className="container">

@@ -1,6 +1,6 @@
 
 import "./index.css";
-import Header from '../../Components/Header-Inicial/header-inicial.js';
+import HeaderL from '../../Components/Header-Logado/header-logado.js';
 import Footer from '../../Components/Footer/footer.js';
 
 function Carrinho() {
@@ -32,7 +32,7 @@ function Carrinho() {
 
     return (
         <main className="cart-page">
-            <Header />
+            <HeaderL />
             
             <section className="cart-section">
                 <div className="container">

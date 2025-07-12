@@ -1,12 +1,12 @@
 import "./index.css";
-import Header from '../../Components/Header-Inicial/header-inicial.js';
+import HeaderL from '../../Components/Header-Logado/header-logado.js';
 import Footer from '../../Components/Footer/footer.js';
 
 
 function PokemonDetail() {
     return (
         <main className="pokemon-detail">
-            <Header />
+            <HeaderL />
             {/* Breadcrumb */}
             <section className="breadcrumb">
                 <div className="container-nav-detail">
@@ -43,8 +43,6 @@ function PokemonDetail() {
 
                             <div className="price-section">
                                 <span className="current-price">R$ 1.800,00</span>
-                                <span className="original-price">R$ 2.200,00</span>
-                                <span className="discount">18% OFF</span>
                             </div>
 
                             <div className="pokemon-types">
@@ -54,50 +52,6 @@ function PokemonDetail() {
                             <div className="pokemon-description">
                                 <h3>Descrição</h3>
                                 <p>Este Pikachu especial possui uma coloração única que o torna extremamente raro. Sua pelagem dourada brilha sob a luz, e suas bochechas vermelhas emitem faíscas mais intensas que as de um Pikachu comum. Capturado durante um evento especial na Floresta de Viridian, este Pokemon é uma verdadeira joia para qualquer colecionador.</p>
-                            </div>
-
-                            <div className="pokemon-stats">
-                                <h3>Estatísticas</h3>
-                                <div className="stats-grid">
-                                    <div className="stat">
-                                        <span className="stat-label">HP</span>
-                                        <div className="stat-bar">
-                                            <div className="stat-fill" style={{ width: '70%' }}></div>
-                                        </div>
-                                        <span className="stat-value">35</span>
-                                    </div>
-                                    <div className="stat">
-                                        <span className="stat-label">Ataque</span>
-                                        <div className="stat-bar">
-                                            <div className="stat-fill" style={{ width: '80%' }}></div>
-                                        </div>
-                                        <span className="stat-value">55</span>
-                                    </div>
-                                    <div className="stat">
-                                        <span className="stat-label">Defesa</span>
-                                        <div className="stat-bar">
-                                            <div className="stat-fill" style={{ width: '60%' }}></div>
-                                        </div>
-                                        <span className="stat-value">40</span>
-                                    </div>
-                                    <div className="stat">
-                                        <span className="stat-label">Velocidade</span>
-                                        <div className="stat-bar">
-                                            <div className="stat-fill" style={{ width: '90%' }}></div>
-                                        </div>
-                                        <span className="stat-value">90</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="pokemon-moves">
-                                <h3>Movimentos Especiais</h3>
-                                <div className="moves-grid">
-                                    <span className="move">Thunderbolt</span>
-                                    <span className="move">Quick Attack</span>
-                                    <span className="move">Iron Tail</span>
-                                    <span className="move">Electro Ball</span>
-                                </div>
                             </div>
 
                             <div className="purchase-section">
@@ -138,10 +92,6 @@ function PokemonDetail() {
                                     <h3>Informações Detalhadas</h3>
                                     <div className="detail-table">
                                         <div className="detail-row">
-                                            <span className="detail-label">Espécie:</span>
-                                            <span className="detail-value">Pokemon Rato</span>
-                                        </div>
-                                        <div className="detail-row">
                                             <span className="detail-label">Altura:</span>
                                             <span className="detail-value">0.4 m</span>
                                         </div>
@@ -152,14 +102,6 @@ function PokemonDetail() {
                                         <div className="detail-row">
                                             <span className="detail-label">Categoria:</span>
                                             <span className="detail-value">Shiny</span>
-                                        </div>
-                                        <div className="detail-row">
-                                            <span className="detail-label">Habilidade:</span>
-                                            <span className="detail-value">Static</span>
-                                        </div>
-                                        <div className="detail-row">
-                                            <span className="detail-label">Raridade:</span>
-                                            <span className="detail-value">★★★★☆</span>
                                         </div>
                                     </div>
                                 </div>
