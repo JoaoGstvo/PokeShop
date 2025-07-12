@@ -1,405 +1,381 @@
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './painel-administrativo.css';
 
 function PainelAdministrativo() {
-    useEffect(() => {
-        const links = document.querySelectorAll('.link-barra-lateral');
-        const secoes = document.querySelectorAll('.secao-administrativa');
+    const [secaoAtiva, setSecaoAtiva] = useState('pokemons');
 
-        links.forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                links.forEach(l => l.classList.remove('ativo'));
-                secoes.forEach(s => s.classList.remove('ativo'));
-                this.classList.add('ativo');
-                const targetId = this.getAttribute('href').substring(1);
-                document.getElementById(targetId).classList.add('ativo');
-            });
-        });
-    }, []);
+    const trocarSecao = (secao) => {
+        setSecaoAtiva(secao);
+    };
 
     return (
-        <main className="pagina-administrativa">
+        <main className="painel-admin">
             {/* Cabeçalho */}
-            <header className="cabecalho-administrativo">
-                <div className="container-cabecalho-administrativo">
-                    <div className="logotipo-administrativo">
+            <header className="cabecalho-admin">
+                <div className="container-cabecalho">
+                    <div className="logo-admin">
                         <h1><i className="fas fa-shield-alt"></i> PokeShop Admin</h1>
                     </div>
-                    <nav className="navegacao-administrativa">
-                        <a href="/" className="link-navegacao-administrativo">
+                    <nav className="nav-admin">
+                        <a href="/" className="link-voltar">
                             <i className="fas fa-arrow-left"></i>
                             Voltar ao Site
                         </a>
-                        <div className="usuario-administrativo">
+                        <div className="usuario-info">
                             <i className="fas fa-user-circle"></i>
-                            <span>Admin</span>
+                            <span>Administrador</span>
                         </div>
                     </nav>
                 </div>
             </header>
 
-            {/* Barra Lateral */}
-            <aside className="barra-lateral-administrativa">
-                <nav className="navegacao-barra-lateral">
-                    <a href="#gerenciamento-pokemon" className="link-barra-lateral ativo">
+            {/* Menu Lateral */}
+            <aside className="menu-lateral">
+                <nav className="nav-lateral">
+                    <button 
+                        className={`item-menu ${secaoAtiva === 'pokemons' ? 'ativo' : ''}`}
+                        onClick={() => trocarSecao('pokemons')}
+                    >
                         <i className="fas fa-dragon"></i>
-                        Gerenciar Pokémons
-                    </a>
-                    <a href="#pedidos" className="link-barra-lateral">
-                        <i className="fas fa-shopping-bag"></i>
-                        Pedidos
-                    </a>
-                    <a href="#categorias" className="link-barra-lateral">
+                        Pokémons
+                    </button>
+                    <button 
+                        className={`item-menu ${secaoAtiva === 'categorias' ? 'ativo' : ''}`}
+                        onClick={() => trocarSecao('categorias')}
+                    >
                         <i className="fas fa-tags"></i>
                         Categorias
-                    </a>
-                    <a href="#usuarios" className="link-barra-lateral">
+                    </button>
+                    <button 
+                        className={`item-menu ${secaoAtiva === 'usuarios' ? 'ativo' : ''}`}
+                        onClick={() => trocarSecao('usuarios')}
+                    >
                         <i className="fas fa-users"></i>
                         Usuários
-                    </a>
+                    </button>
+                    <button 
+                        className={`item-menu ${secaoAtiva === 'pedidos' ? 'ativo' : ''}`}
+                        onClick={() => trocarSecao('pedidos')}
+                    >
+                        <i className="fas fa-shopping-bag"></i>
+                        Pedidos
+                    </button>
                 </nav>
             </aside>
 
             {/* Conteúdo Principal */}
-            <main className="conteudo-principal-administrativo">
-                {/* Gerenciamento de Pokémons */}
-                <section id="gerenciamento-pokemon" className="secao-administrativa ativo">
-                    <div className="cabecalho-secao">
-                        <h2>Gerenciamento de Pokémons</h2>
-                        <p>Gerencie todos os Pokémons da sua loja</p>
-                        <div className="acoes-cabecalho">
-                            <button className="botao-primario">
+            <main className="conteudo-admin">
+                {/* Seção Pokémons */}
+                {secaoAtiva === 'pokemons' && (
+                    <div className="secao-conteudo">
+                        <div className="cabecalho-secao">
+                            <h2>Gerenciar Pokémons</h2>
+                            <button className="btn-primario">
                                 <i className="fas fa-plus"></i>
-                                Adicionar Pokémon
+                                Cadastrar Pokémon
                             </button>
                         </div>
-                    </div>
-                    
-                    <div className="filtros-administrativos">
-                        <div className="grupo-filtro">
-                            <input type="text" placeholder="Buscar pokémons..." className="campo-busca" />
-                        </div>
-                        <div className="grupo-filtro">
-                            <select className="selecao-filtro">
-                                <option>Todas as categorias</option>
-                                <option>Fogo</option>
-                                <option>Água</option>
-                                <option>Planta</option>
+
+                        <div className="filtros">
+                            <input 
+                                type="text" 
+                                placeholder="Buscar pokémon..." 
+                                className="campo-busca"
+                            />
+                            <select className="filtro-categoria">
+                                <option value="">Todas as categorias</option>
+                                <option value="fogo">Fogo</option>
+                                <option value="agua">Água</option>
+                                <option value="planta">Planta</option>
                             </select>
                         </div>
-                    </div>
 
-                    <div className="tabela-administrativa-container">
-                        <table className="tabela-administrativa">
-                            <thead>
-                                <tr>
-                                    <th>Imagem</th>
-                                    <th>Nome</th>
-                                    <th>Categoria</th>
-                                    <th>Preço</th>
-                                    <th>Estoque</th>
-                                    <th>Status</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><div className="imagem-pokemon-placeholder"></div></td>
-                                    <td>Pikachu</td>
-                                    <td><span className="etiqueta categoria-eletrico">Elétrico</span></td>
-                                    <td>R$ 299,99</td>
-                                    <td>15</td>
-                                    <td><span className="etiqueta status-ativo">Ativo</span></td>
-                                    <td>
-                                        <div className="botoes-acao">
-                                            <button className="botao-acao editar">
-                                                <i className="fas fa-edit"></i>
-                                            </button>
-                                            <button className="botao-acao excluir">
-                                                <i className="fas fa-trash"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><div className="imagem-pokemon-placeholder"></div></td>
-                                    <td>Charizard</td>
-                                    <td><span className="etiqueta categoria-fogo">Fogo</span></td>
-                                    <td>R$ 599,99</td>
-                                    <td>8</td>
-                                    <td><span className="etiqueta status-ativo">Ativo</span></td>
-                                    <td>
-                                        <div className="botoes-acao">
-                                            <button className="botao-acao editar">
-                                                <i className="fas fa-edit"></i>
-                                            </button>
-                                            <button className="botao-acao excluir">
-                                                <i className="fas fa-trash"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                {/* Pedidos */}
-                <section id="pedidos" className="secao-administrativa">
-                    <div className="cabecalho-secao">
-                        <h2>Gerenciamento de Pedidos</h2>
-                        <p>Acompanhe todos os pedidos realizados</p>
-                    </div>
-                    
-                    <div className="grade-estatisticas">
-                        <div className="cartao-estatistica">
-                            <div className="icone-estatistica fundo-azul">
-                                <i className="fas fa-shopping-cart"></i>
-                            </div>
-                            <div className="conteudo-estatistica">
-                                <h3>156</h3>
-                                <p>Total de Pedidos</p>
-                            </div>
-                        </div>
-                        <div className="cartao-estatistica">
-                            <div className="icone-estatistica fundo-verde">
-                                <i className="fas fa-check-circle"></i>
-                            </div>
-                            <div className="conteudo-estatistica">
-                                <h3>142</h3>
-                                <p>Pedidos Entregues</p>
-                            </div>
-                        </div>
-                        <div className="cartao-estatistica">
-                            <div className="icone-estatistica fundo-amarelo">
-                                <i className="fas fa-clock"></i>
-                            </div>
-                            <div className="conteudo-estatistica">
-                                <h3>8</h3>
-                                <p>Pendentes</p>
-                            </div>
+                        <div className="tabela-container">
+                            <table className="tabela">
+                                <thead>
+                                    <tr>
+                                        <th>Imagem</th>
+                                        <th>Nome</th>
+                                        <th>Número</th>
+                                        <th>Tipo</th>
+                                        <th>Categoria</th>
+                                        <th>Preço</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div className="pokemon-img-mini"></div>
+                                        </td>
+                                        <td>Pikachu</td>
+                                        <td>#025</td>
+                                        <td><span className="tipo eletrico">Elétrico</span></td>
+                                        <td>Comum</td>
+                                        <td>R$ 299,99</td>
+                                        <td>
+                                            <div className="acoes">
+                                                <button className="btn-acao editar">
+                                                    <i className="fas fa-edit"></i>
+                                                </button>
+                                                <button className="btn-acao remover">
+                                                    <i className="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div className="pokemon-img-mini"></div>
+                                        </td>
+                                        <td>Charizard</td>
+                                        <td>#006</td>
+                                        <td><span className="tipo fogo">Fogo</span></td>
+                                        <td>Raro</td>
+                                        <td>R$ 599,99</td>
+                                        <td>
+                                            <div className="acoes">
+                                                <button className="btn-acao editar">
+                                                    <i className="fas fa-edit"></i>
+                                                </button>
+                                                <button className="btn-acao remover">
+                                                    <i className="fas fa-trash"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+                )}
 
-                    <div className="tabela-administrativa-container">
-                        <table className="tabela-administrativa">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Cliente</th>
-                                    <th>Data</th>
-                                    <th>Total</th>
-                                    <th>Status</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>#001</td>
-                                    <td>João Silva</td>
-                                    <td>15/01/2025</td>
-                                    <td>R$ 899,98</td>
-                                    <td><span className="etiqueta status-entregue">Entregue</span></td>
-                                    <td>
-                                        <div className="botoes-acao">
-                                            <button className="botao-acao visualizar">
-                                                <i className="fas fa-eye"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#002</td>
-                                    <td>Maria Santos</td>
-                                    <td>14/01/2025</td>
-                                    <td>R$ 299,99</td>
-                                    <td><span className="etiqueta status-pendente">Pendente</span></td>
-                                    <td>
-                                        <div className="botoes-acao">
-                                            <button className="botao-acao visualizar">
-                                                <i className="fas fa-eye"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                {/* Categorias */}
-                <section id="categorias" className="secao-administrativa">
-                    <div className="cabecalho-secao">
-                        <h2>Gerenciamento de Categorias</h2>
-                        <p>Organize as categorias dos seus Pokémons</p>
-                        <div className="acoes-cabecalho">
-                            <button className="botao-primario">
+                {/* Seção Categorias */}
+                {secaoAtiva === 'categorias' && (
+                    <div className="secao-conteudo">
+                        <div className="cabecalho-secao">
+                            <h2>Gerenciar Categorias</h2>
+                            <button className="btn-primario">
                                 <i className="fas fa-plus"></i>
                                 Nova Categoria
                             </button>
                         </div>
-                    </div>
 
-                    <div className="grade-categorias">
-                        <div className="cartao-categoria">
-                            <div className="cabecalho-categoria categoria-fogo">
-                                <i className="fas fa-fire"></i>
-                                <h3>Fogo</h3>
+                        <div className="grid-categorias">
+                            <div className="card-categoria">
+                                <div className="categoria-header">
+                                    <i className="fas fa-fire"></i>
+                                    <h3>Comum</h3>
+                                </div>
+                                <div className="categoria-info">
+                                    <p>15 Pokémons</p>
+                                    <div className="acoes">
+                                        <button className="btn-acao editar">
+                                            <i className="fas fa-edit"></i>
+                                        </button>
+                                        <button className="btn-acao remover">
+                                            <i className="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="conteudo-categoria">
-                                <p><strong>12</strong> Pokémons</p>
-                                <div className="botoes-acao">
-                                    <button className="botao-acao editar">
-                                        <i className="fas fa-edit"></i>
-                                    </button>
-                                    <button className="botao-acao excluir">
-                                        <i className="fas fa-trash"></i>
-                                    </button>
+
+                            <div className="card-categoria">
+                                <div className="categoria-header">
+                                    <i className="fas fa-gem"></i>
+                                    <h3>Raro</h3>
+                                </div>
+                                <div className="categoria-info">
+                                    <p>8 Pokémons</p>
+                                    <div className="acoes">
+                                        <button className="btn-acao editar">
+                                            <i className="fas fa-edit"></i>
+                                        </button>
+                                        <button className="btn-acao remover">
+                                            <i className="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="card-categoria">
+                                <div className="categoria-header">
+                                    <i className="fas fa-crown"></i>
+                                    <h3>Lendário</h3>
+                                </div>
+                                <div className="categoria-info">
+                                    <p>3 Pokémons</p>
+                                    <div className="acoes">
+                                        <button className="btn-acao editar">
+                                            <i className="fas fa-edit"></i>
+                                        </button>
+                                        <button className="btn-acao remover">
+                                            <i className="fas fa-trash"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div className="cartao-categoria">
-                            <div className="cabecalho-categoria categoria-agua">
-                                <i className="fas fa-tint"></i>
-                                <h3>Água</h3>
+                    </div>
+                )}
+
+                {/* Seção Usuários */}
+                {secaoAtiva === 'usuarios' && (
+                    <div className="secao-conteudo">
+                        <div className="cabecalho-secao">
+                            <h2>Usuários Cadastrados</h2>
+                        </div>
+
+                        <div className="estatisticas">
+                            <div className="card-stat">
+                                <div className="stat-icone">
+                                    <i className="fas fa-users"></i>
+                                </div>
+                                <div className="stat-info">
+                                    <h3>1,247</h3>
+                                    <p>Total de Usuários</p>
+                                </div>
                             </div>
-                            <div className="conteudo-categoria">
-                                <p><strong>8</strong> Pokémons</p>
-                                <div className="botoes-acao">
-                                    <button className="botao-acao editar">
-                                        <i className="fas fa-edit"></i>
-                                    </button>
-                                    <button className="botao-acao excluir">
-                                        <i className="fas fa-trash"></i>
-                                    </button>
+                            <div className="card-stat">
+                                <div className="stat-icone ativo">
+                                    <i className="fas fa-user-check"></i>
+                                </div>
+                                <div className="stat-info">
+                                    <h3>1,189</h3>
+                                    <p>Usuários Ativos</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="cartao-categoria">
-                            <div className="cabecalho-categoria categoria-planta">
-                                <i className="fas fa-leaf"></i>
-                                <h3>Planta</h3>
+                        <div className="filtros">
+                            <input 
+                                type="text" 
+                                placeholder="Buscar usuário..." 
+                                className="campo-busca"
+                            />
+                        </div>
+
+                        <div className="tabela-container">
+                            <table className="tabela">
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Email</th>
+                                        <th>Telefone</th>
+                                        <th>Data Cadastro</th>
+                                        <th>Pedidos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>João Silva</td>
+                                        <td>joao@email.com</td>
+                                        <td>(11) 99999-9999</td>
+                                        <td>15/01/2025</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maria Santos</td>
+                                        <td>maria@email.com</td>
+                                        <td>(11) 88888-8888</td>
+                                        <td>14/01/2025</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                )}
+
+                {/* Seção Pedidos */}
+                {secaoAtiva === 'pedidos' && (
+                    <div className="secao-conteudo">
+                        <div className="cabecalho-secao">
+                            <h2>Gerenciar Pedidos</h2>
+                        </div>
+
+                        <div className="estatisticas">
+                            <div className="card-stat">
+                                <div className="stat-icone">
+                                    <i className="fas fa-shopping-cart"></i>
+                                </div>
+                                <div className="stat-info">
+                                    <h3>156</h3>
+                                    <p>Total de Pedidos</p>
+                                </div>
                             </div>
-                            <div className="conteudo-categoria">
-                                <p><strong>10</strong> Pokémons</p>
-                                <div className="botoes-acao">
-                                    <button className="botao-acao editar">
-                                        <i className="fas fa-edit"></i>
-                                    </button>
-                                    <button className="botao-acao excluir">
-                                        <i className="fas fa-trash"></i>
-                                    </button>
+                            <div className="card-stat">
+                                <div className="stat-icone pendente">
+                                    <i className="fas fa-clock"></i>
+                                </div>
+                                <div className="stat-info">
+                                    <h3>8</h3>
+                                    <p>Pendentes</p>
+                                </div>
+                            </div>
+                            <div className="card-stat">
+                                <div className="stat-icone ativo">
+                                    <i className="fas fa-check-circle"></i>
+                                </div>
+                                <div className="stat-info">
+                                    <h3>142</h3>
+                                    <p>Entregues</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
 
-                {/* Usuários */}
-                <section id="usuarios" className="secao-administrativa">
-                    <div className="cabecalho-secao">
-                        <h2>Gerenciamento de Usuários</h2>
-                        <p>Gerencie todos os usuários cadastrados</p>
-                    </div>
-                    
-                    <div className="grade-estatisticas">
-                        <div className="cartao-estatistica">
-                            <div className="icone-estatistica fundo-roxo">
-                                <i className="fas fa-users"></i>
-                            </div>
-                            <div className="conteudo-estatistica">
-                                <h3>2,847</h3>
-                                <p>Total de Usuários</p>
-                            </div>
-                        </div>
-                        <div className="cartao-estatistica">
-                            <div className="icone-estatistica fundo-verde">
-                                <i className="fas fa-user-check"></i>
-                            </div>
-                            <div className="conteudo-estatistica">
-                                <h3>2,634</h3>
-                                <p>Usuários Ativos</p>
-                            </div>
-                        </div>
-                        <div className="cartao-estatistica">
-                            <div className="icone-estatistica fundo-vermelho">
-                                <i className="fas fa-user-times"></i>
-                            </div>
-                            <div className="conteudo-estatistica">
-                                <h3>213</h3>
-                                <p>Inativos</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="filtros-administrativos">
-                        <div className="grupo-filtro">
-                            <input type="text" placeholder="Buscar usuários..." className="campo-busca" />
-                        </div>
-                        <div className="grupo-filtro">
-                            <select className="selecao-filtro">
-                                <option>Todos os status</option>
-                                <option>Ativo</option>
-                                <option>Inativo</option>
+                        <div className="filtros">
+                            <select className="filtro-status">
+                                <option value="">Todos os status</option>
+                                <option value="pendente">Pendente</option>
+                                <option value="processando">Processando</option>
+                                <option value="entregue">Entregue</option>
                             </select>
                         </div>
-                    </div>
 
-                    <div className="tabela-administrativa-container">
-                        <table className="tabela-administrativa">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nome</th>
-                                    <th>Email</th>
-                                    <th>Data Cadastro</th>
-                                    <th>Status</th>
-                                    <th>Ações</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>#001</td>
-                                    <td>João Silva</td>
-                                    <td>joao@email.com</td>
-                                    <td>10/01/2025</td>
-                                    <td><span className="etiqueta status-ativo">Ativo</span></td>
-                                    <td>
-                                        <div className="botoes-acao">
-                                            <button className="botao-acao visualizar">
+                        <div className="tabela-container">
+                            <table className="tabela">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Cliente</th>
+                                        <th>Data</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#001</td>
+                                        <td>João Silva</td>
+                                        <td>15/01/2025</td>
+                                        <td>R$ 899,98</td>
+                                        <td><span className="status entregue">Entregue</span></td>
+                                        <td>
+                                            <button className="btn-acao visualizar">
                                                 <i className="fas fa-eye"></i>
                                             </button>
-                                            <button className="botao-acao editar">
-                                                <i className="fas fa-edit"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#002</td>
-                                    <td>Maria Santos</td>
-                                    <td>maria@email.com</td>
-                                    <td>08/01/2025</td>
-                                    <td><span className="etiqueta status-ativo">Ativo</span></td>
-                                    <td>
-                                        <div className="botoes-acao">
-                                            <button className="botao-acao visualizar">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>#002</td>
+                                        <td>Maria Santos</td>
+                                        <td>14/01/2025</td>
+                                        <td>R$ 299,99</td>
+                                        <td><span className="status pendente">Pendente</span></td>
+                                        <td>
+                                            <button className="btn-acao visualizar">
                                                 <i className="fas fa-eye"></i>
                                             </button>
-                                            <button className="botao-acao editar">
-                                                <i className="fas fa-edit"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </section>
+                )}
             </main>
         </main>
     );
