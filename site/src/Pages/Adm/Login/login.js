@@ -44,8 +44,9 @@ function LoginAdministrativo() {
                     </div>
                     
                     <button type="submit" className="admin-login-btn">
-                        <i className="fas fa-sign-in-alt"></i>
+                        <a href="/painel-administrativo" className="botao-login-adm"><i className="fas fa-sign-in-alt"></i>
                         Acessar Painel Admin
+                        </a>
                     </button>
                 </form>
                 

@@ -249,6 +249,15 @@
     }
 }
 
+.botao-login-adm {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
 @media (max-width: 480px) {
     .admin-login-container {
         padding: 1.5rem;
