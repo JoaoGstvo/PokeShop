@@ -1,11 +1,13 @@
 import "./index.css";
-import HeaderL from '../../Components/Header-Logado/header-logado.js';
+import Header from '../../Components/Header-Logado/header-logado.js';
 import Footer from '../../Components/Footer/footer.js';
+
+// import CardPokemon from "../../Components/CardPokemon/index.js"
 
 function LandingPage() {
     return (
         <main className="landing-page">
-            <HeaderL />
+            <Header />
             {/* <!-- Hero Section --> */}
             <section id="home" className="hero">
                 <div className="container">
@@ -33,36 +35,12 @@ function LandingPage() {
                             <option value="gigantamax">Gigantamax</option>
                             <option value="event">Evento</option>
                         </select>
-                        <select className="filtro-select" defaultValue="todos">
-                            <option value="todos">Todos os Preços</option>
-                            <option value="ate-1000">Até R$ 1.000</option>
-                            <option value="1000-2000">R$ 1.000 - R$ 2.000</option>
-                            <option value="acima-2000">Acima de R$ 2.000</option>
-                        </select>
-                        <select className="filtro-select" defaultValue="todos">
-                            <option value="todos">Todas as Raridades</option>
-                            <option value="comum">Comum</option>
-                            <option value="raro">Raro</option>
-                            <option value="lendario">Lendário</option>
-                        </select>
                     </div>
 
                     {/* <!-- Pokemon Grid --> */}
                     <div className="pokemon-grid">
-                        {/* <!-- Legendary Pokemon --> */}
-                        <div className="pokemon-card legendary" data-category="legendary">
-                            <div className="card-header">
-                                <span className="category-badge legendary-badge">Lendário</span>
-                                <span className="price">R$ 2.500,00</span>
-                            </div>
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png" alt="Mewtwo" className="pokemon-image"/>
-                            <div className="card-content">
-                                <h3>Mewtwo</h3>
-                                <p className="pokemon-type">Tipo: Psíquico</p>
-                                <p className="pokemon-description">Pokemon Genético extremamente raro e poderoso.</p>
-                                <a href="/detalhes-pokemon" className="btn btn-secondary">Ver Detalhes</a>
-                            </div>
-                        </div>
+                        
+                        {/* <CardPokemon /> */}
 
                         <div className="pokemon-card legendary" data-category="legendary">
                             <div className="card-header">

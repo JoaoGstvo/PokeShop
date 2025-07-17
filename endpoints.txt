@@ -175,8 +175,6 @@ Corpo da requisição (JSON):
 "tipo": "",
 "preco": 0,
 "descricao": "",
-"stats": {},
-"movimentos": [],
 "imagem": "",
 "categoria": ""
 }
